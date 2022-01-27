@@ -25,6 +25,10 @@ permalinks:
 # whether to use emoji code
 enableEmoji: true
 
+# 修改时间
+frontmatter:
+  lastmod: [":fileModTime", "lastmod"]
+
 params:
     mainSections:
         - post
