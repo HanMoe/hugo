@@ -382,6 +382,17 @@ widget:
 
 3. 拷贝`external-link.svg`图标到网站根目录`/assets/icons`下。图标地址：[点击直达](https://github.com/iwyang/iwyang.github.io/tree/develop/assets/icons)
 
+## 自动更新文章最后修改时间
+
+在`config.yaml`里写:
+
+```markdown
+frontmatter:
+  lastmod: [":fileModTime", "lastmod"]
+```
+
+如果加上":git"，就可以读取 git 推送的时间，不过貌似会更新所有文章的更新时间。
+
 ## 添加友情链接 shortcodes
 
 1. 网站根目录新建文件`layouts\page\links.html`：
@@ -535,6 +546,33 @@ widget:
        }
    ]
    ```
+
+5.调整布局，设置友情链接为双栏：
+
+修改根目录`/assets/scss/custom.scss`
+
+```scss
+//友情链接双栏
+@media (min-width: 1024px) {
+    .article-list--compact.links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        background: none;
+        box-shadow: none;
+        
+        article {
+            background: var(--card-background);
+            border: none;
+            box-shadow: var(--shadow-l2);
+            margin-bottom: 8px;
+            border-radius: 10px;
+            &:nth-child(odd) {
+                margin-right: 8px;
+            }
+        }
+    }
+}
+```
 
 ## 添加音乐短代码
 
@@ -696,4 +734,6 @@ git submodule update --recursive --remote
 + [hugo音乐短代码](https://immmmm.com/hugo-shortcodes-music/)
 + [主题文档 - 扩展 Shortcodes-music](https://hugodoit.pages.dev/zh-cn/theme-documentation-extended-shortcodes/#8-music)
 + [Hugo模板的基本语法-注释](https://hugo.aiaide.com/post/hugo%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/#%E6%B3%A8%E9%87%8A)
++ [Hugo | 第三篇 Stack 主题装修记录，堂堂再临！](https://mantyke.icu/2022/stack-theme-furnish03/)
++ [自动添加博客页面更新日期](https://blog.yfei.page/cn/2021/03/lastmod-hugo/)
 
