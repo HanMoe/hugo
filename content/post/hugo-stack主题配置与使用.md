@@ -531,6 +531,8 @@ hasCJKLanguage: true
     </section>
 ```
 
+**PS：如果加入`站点总字数统计`，`Github Action`部署到服务器就会变慢。**
+
 ## 添加友情链接 shortcodes
 
 1. 网站根目录新建文件`layouts\page\links.html`：
