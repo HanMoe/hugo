@@ -12,11 +12,6 @@ edit: false
 comment: true
 ---
 
-<style>
-.article-footer {
-    display: none;
-  }
-</style>
 ### 欢迎交换友情链接，本站信息：
 
 > 网站名称：Bore's Notes

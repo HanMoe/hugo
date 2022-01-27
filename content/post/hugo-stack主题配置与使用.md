@@ -3,7 +3,7 @@ title: "Hugo Stack主题配置与使用"
 slug: "hugo-theme-stack"
 description: ""
 date: 2021-07-24T09:15:26+08:00
-lastmod: 2021-11-07T09:15:26+08:00
+lastmod: 2022-01-27T09:15:26+08:00
 draft: false
 toc: true
 weight: false
@@ -391,7 +391,94 @@ frontmatter:
   lastmod: [":fileModTime", "lastmod"]
 ```
 
-如果加上":git"，就可以读取 git 推送的时间，不过貌似会更新所有文章的更新时间。
+如果加上":git"，就可以读取 git 推送的时间。不过貌似这样设置后，会更新所有文章的更新时间。解决方法：[Hugo | 以正确姿势自动添加文章最后更新时间](https://mantyke.icu/2021/47a5331b/)
+
+**PS:还是手动更改更新时间简单，之所以本地预览`最后更新于`是对的，原因在于`github actions`出现了问题，要解决问题只有参照上面的解决方法，我选择手动更改更新时间**
+
+### 隐藏页脚的`最后更新于`
+
+```html
+<style>
+.article-footer {
+    display: none;
+  }
+</style>
+```
+
+## 删除相关文章、分类图片，修改相关文章数目
+
+### 删除相关文章图片
+
+根目录`assets/scss/partials/layout/article.scss`
+
+```scss
+.related-contents {
+    overflow-x: auto;
+    padding-bottom: 15px;
+
+    & > .flex {
+        float: left;
+    }
+
+    article {
+        margin-right: 15px;
+        flex-shrink: 0;
+        overflow: hidden;
+        width: 250px;
+        height: 80px; //改为80
+        box-shadow: var(--shadow-l2); //加个卡片阴影
+
+        .article-title {
+            font-size: 1.4rem; //改为1.4
+            margin: auto;
+            justify-content: center; //居中
+        }
+```
+
+### 删除分类图片
+
+根目录`assets/scss/partials/layout/list.scss`
+
+```scss
+.subsection-list {
+    margin-bottom: var(--section-separation);
+    overflow-x: auto;
+
+    .article-list--tile {
+        display: flex;
+        padding-bottom: 15px;
+
+        article {
+            width: 200px; //改爲200px
+            height: 50px; //改爲50px
+            margin-right: 5px; //改爲5px
+            flex-shrink: 0;
+            box-shadow: var(--shadow-l2); //改个卡片阴影
+
+            .article-title {
+                margin: 0;
+                font-size: 1.5rem; //改爲1.5rem，調整字體尺寸
+            }
+
+            .article-details {
+                padding: 20px;
+                justify-content: center; //添加justify-content設定，保持字體居中
+            }
+
+        }
+    }
+}
+```
+
+### 修改相关文章数目
+
+根目录`layouts/partials/article/components/related-contents.html`
+
+```html
+ {{ $related := (where (.Site.RegularPages.Related .) "Params.hidden" "!=" true) | first 3 }}  //修改数字即可
+```
+
+数字设为0，即关闭`相关文章`。
 
 ## 添加友情链接 shortcodes
 
