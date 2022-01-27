@@ -1,9 +1,9 @@
 {{- $ThemeVersion := "3.7.0" -}}
 <footer class="site-footer">
-       {{$scratch := newScratch}}
-       {{ range (where .Site.Pages "Kind" "page" )}}
-       {{$scratch.Add "total" .WordCount}}
-       {{ end }}
+        {{$scratch := newScratch}}
+        {{ range (where .Site.Pages "Kind" "page" )}}
+        {{$scratch.Add "total" .WordCount}}
+        {{ end }}
 
     <section class="copyright">
         &copy; 

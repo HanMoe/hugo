@@ -480,6 +480,53 @@ frontmatter:
 
 数字设为0，即关闭`相关文章`。
 
+## 加入字数统计、站点总字数统计
+
+### 加入字数统计
+
+1.直接用阅读时间改的，图标路径为根目录`assets\icons`
+
+根目录`layouts\partials\article\components\details.html`
+
+```html
+        {{ if .Site.Params.article.readingTime }}
+            <div>
+                {{ partial "helper/icon" "pencil" }}
+                <time class="article-words">
+                    {{ .WordCount }} 字
+                </time>
+            </div>
+        {{ end }}
+    </footer>
+```
+
+2.然后在`config.yaml`中加入一行，以正确显示中文字符数量
+
+3.`config.yaml`中确保`readingTime: true`
+
+### 站点总字数统计
+
+1.在`layouts\partials\footer\footer.html`里写上总字数参数
+
+```html
+{{$scratch := newScratch}}
+{{ range (where .Site.Pages "Kind" "page" )}}
+    {{$scratch.Add "total" .WordCount}}
+{{ end }}
+```
+
+2.根目录`layouts\partials\footer\footer.html`
+
+```html
+<section class="copyright">
+        &copy; 
+        {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format "2006"))) }}
+            {{ .Site.Params.footer.since }} - 
+        {{ end }}
+        {{ now.Format "2006" }} Bore's Blog<br>共 {{ div ($scratch.Get "total") 1000.0 | lang.FormatNumber 2 }}k 字 · 共 {{ len (where .Site.RegularPages "Section" "post") }}篇文章</br><span><p>
+    </section>
+```
+
 ## 添加友情链接 shortcodes
 
 1. 网站根目录新建文件`layouts\page\links.html`：
@@ -814,8 +861,6 @@ git submodule update --recursive --remote
 ## 参考链接
 
 + [Hugo 主题 Stack文档](https://docs.stack.jimmycai.com/zh/)
-+ [hugo主题stack - 银河小筑](https://yinhe.co/archives/20210401_hugo_theme_stack.html)
-+ [树洞](https://blog.jimmycai.com/links/)
 + [Adding the widget tag-cloud for "categories", on the right content region on Homepage](https://github.com/CaiJimmy/hugo-theme-stack/issues/169)
 + [vinceying/Vince-blog-https://i.vince.pub/](https://github.com/vinceying/Vince-blog)
 + [hugo音乐短代码](https://immmmm.com/hugo-shortcodes-music/)
@@ -823,4 +868,6 @@ git submodule update --recursive --remote
 + [Hugo模板的基本语法-注释](https://hugo.aiaide.com/post/hugo%E6%A8%A1%E6%9D%BF%E7%9A%84%E5%9F%BA%E6%9C%AC%E8%AF%AD%E6%B3%95/#%E6%B3%A8%E9%87%8A)
 + [Hugo | 第三篇 Stack 主题装修记录，堂堂再临！](https://mantyke.icu/2022/stack-theme-furnish03/)
 + [自动添加博客页面更新日期](https://blog.yfei.page/cn/2021/03/lastmod-hugo/)
+
++ [Hugo | 看中 Stack 主题的归档功能，搬家并做修改](https://mantyke.icu/2021/f9f0ec87/)
 
