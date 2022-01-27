@@ -17,6 +17,13 @@ comments: false
   }
 </style>
 
+<style>
+.article-footer {
+    display: none;
+  }
+</style>
+
+
 <div id='speak'></speak>
 <!-- 使用markdown渲染 -->
 <!-- <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/ispeak-bber/ispeak-bber-md.min.js" charset="utf-8" ></script> -->

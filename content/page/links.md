@@ -12,6 +12,11 @@ edit: false
 comment: true
 ---
 
+<style>
+.article-footer {
+    display: none;
+  }
+</style>
 ### 欢迎交换友情链接，本站信息：
 
 > 网站名称：Bore's Notes
@@ -21,3 +26,4 @@ comment: true
 > 网站图像：https://cdn.jsdelivr.net/gh/iwyang/pic/avatar.jpg
 >
 > 网站描述：博观而约取，厚积而薄发。
+
