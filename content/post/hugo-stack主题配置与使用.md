@@ -502,11 +502,15 @@ frontmatter:
 
 2.然后在`config.yaml`中加入一行，以正确显示中文字符数量
 
+```yaml
+hasCJKLanguage: true
+```
+
 3.`config.yaml`中确保`readingTime: true`
 
 ### 站点总字数统计
 
-1.在`layouts\partials\footer\footer.html`里写上总字数参数
+1.根目录`layouts\partials\footer\footer.html`里写上总字数参数
 
 ```html
 {{$scratch := newScratch}}
