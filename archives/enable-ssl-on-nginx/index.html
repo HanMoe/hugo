@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-1557 字
+1705 字
 </time>
 </div>
 </footer>
@@ -51,11 +51,63 @@ extended">
 <h3 id=安装证书>安装证书</h3>
 <p>基本操作参考：<a class=link href="https://help.aliyun.com/document_detail/98728.html?spm=5176.2020520163.cas.13.6053jBDQjBDQPD" target=_blank rel=noopener>在Nginx/Tengine服务器上安装证书</a>，这里具体讲下Nginx上的配置。</p>
 <p>1.在nginx根目录（默认为/etc/nginx）下创建目录cert。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> /etc/nginx
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> /etc/nginx
 mkdir cert
-</code></pre></div><p>2.把下载的证书两个文件.pem和.key上传到目录cert中。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.把下载的证书两个文件.pem和.key上传到目录cert中。</p>
 <p>3.修改nginx配置文件。<code>vi /etc/nginx/conf.d/hexo.conf</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>server <span class=o>{</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>server <span class=o>{</span>
     listen 80<span class=p>;</span>
     server_name bore.vip www.bore.vip<span class=p>;</span>
     rewrite ^<span class=o>(</span>.*<span class=o>)</span>$ https://<span class=nv>$server_name$1</span> permanent<span class=p>;</span>
@@ -95,7 +147,9 @@ server <span class=o>{</span>
     access_log off<span class=p>;</span>
  <span class=o>}</span>
 <span class=o>}</span>
-</code></pre></div><p>4.修改hugo站点配置文件_config.toml</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>4.修改hugo站点配置文件_config.toml</p>
 <p><code>baseURL = "https://bore.vip/"</code></p>
 <p>5.开启负载均衡</p>
 <p>在阿里云<a class=link href="https://yundunnext.console.aliyun.com/?spm=a2c4g.11186623.2.13.775345eav2PxV4&p=cas#/overview/cn-hangzhou" target=_blank rel=noopener>SSl证书控制台</a>，依次选择<code>部署—负载均衡—选择所有区域</code>，然后部署。</p>
@@ -103,8 +157,15 @@ server <span class=o>{</span>
 <p>ubuntu、centos 6</p>
 <p><code>/etc/init.d/nginx restart</code></p>
 <p>centos 7、8</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>systemctl restart nginx
-</code></pre></div><h2 id=添加-lets-encrypt-免费证书>添加 Let&rsquo;s Encrypt 免费证书</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>systemctl restart nginx
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=添加-lets-encrypt-免费证书>添加 Let&rsquo;s Encrypt 免费证书</h2>
 <h3 id=ubuntu上的操作>Ubuntu上的操作</h3>
 <h4 id=安装-certbot>安装 Certbot</h4>
 <p>在 Ubuntu 上只需要简单的一行命令：</p>
@@ -127,12 +188,71 @@ privkey.pem 证书私钥</p>
 <p>先运行以下命令来测试证书的自动更新：</p>
 <p><code>letsencrypt renew --dry-run --agree-tos</code></p>
 <p>如果一切正常，就可以编辑 crontab 定期运行以下命令：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
 * <span class=m>2</span> * * * service nginx stop <span class=p>&amp;</span> letsencrypt renew <span class=p>&amp;</span> service nginx start
-</code></pre></div><h4 id=配置-nginx>配置 Nginx</h4>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=配置-nginx>配置 Nginx</h4>
 <p>修改 Nginx 配置文件中关于证书的配置：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/nginx/conf.d/hexo.conf
-</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>server <span class=o>{</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/nginx/conf.d/hexo.conf
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>server <span class=o>{</span>
     listen 80<span class=p>;</span>
     server_name iwyang.top www.iwyang.top<span class=p>;</span>
     rewrite ^<span class=o>(</span>.*<span class=o>)</span>$ https://<span class=nv>$server_name$1</span> permanent<span class=p>;</span>
@@ -172,17 +292,85 @@ server <span class=o>{</span>
     access_log off<span class=p>;</span>
  <span class=o>}</span>
 <span class=o>}</span>
-</code></pre></div><p>然后重启 Nginx ，应该就可以看到小绿标了。<code>/etc/init.d/nginx restart</code></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后重启 Nginx ，应该就可以看到小绿标了。<code>/etc/init.d/nginx restart</code></p>
 <h3 id=centos-8上的操作>Centos 8上的操作</h3>
 <h4 id=安装certbot>安装Certbot</h4>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install epel-release -y
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install epel-release -y
 yum install certbot -y
-</code></pre></div><p>然后执行：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>certbot certonly --webroot -w /var/www/hexo -d bore.vip -m 455343442@qq.com --agree-tos
-</code></pre></div><h4 id=配置nginx>配置Nginx</h4>
+</code></pre></td></tr></table>
+</div>
+</div><p>然后执行：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>certbot certonly --webroot -w /var/www/hexo -d bore.vip -m 455343442@qq.com --agree-tos
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=配置nginx>配置Nginx</h4>
 <p>顶级域名参考上面Ubuntu Nginx的配置，二级域名操作如下：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/nginx/conf.d/hexo.conf
-</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>server <span class=o>{</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/nginx/conf.d/hexo.conf
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>server <span class=o>{</span>
     listen 80<span class=p>;</span>
     server_name bore.vip www.bore.vip<span class=p>;</span>
     rewrite ^<span class=o>(</span>.*<span class=o>)</span>$ https://<span class=nv>$server_name$1</span> permanent<span class=p>;</span>
@@ -222,13 +410,46 @@ server <span class=o>{</span>
     access_log off<span class=p>;</span>
  <span class=o>}</span>
 <span class=o>}</span>
-</code></pre></div><p>重启Nginx生效：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>systemctl restart nginx
-</code></pre></div><h4 id=证书自动更新>证书自动更新</h4>
+</code></pre></td></tr></table>
+</div>
+</div><p>重启Nginx生效：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>systemctl restart nginx
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=证书自动更新>证书自动更新</h4>
 <p>由于这个证书的时效只有 90 天，我们需要设置自动更新的功能，帮我们自动更新证书的时效。首先先在命令行模拟证书更新：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>certbot renew --dry-run
-</code></pre></div><p>模拟更新成功的效果如下：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>certbot renew --dry-run
+</code></pre></td></tr></table>
+</div>
+</div><p>模拟更新成功的效果如下：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 ** DRY RUN: simulating <span class=s1>&#39;certbot renew&#39;</span> close to cert expiry
 **          <span class=o>(</span>The <span class=nb>test</span> certificates below have not been saved.<span class=o>)</span>
 <span class=c1>## 可以看到两个域名续期成功</span>
@@ -241,13 +462,36 @@ The following certs could not be renewed:
 ** DRY RUN: simulating <span class=s1>&#39;certbot renew&#39;</span> close to cert expiry
 **          <span class=o>(</span>The <span class=nb>test</span> certificates above have not been saved.<span class=o>)</span>
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-</code></pre></div><p>在无法确认你的 nginx 配置是否正确时，一定要运行模拟更新命令，确保certbot和服务器通讯正常。使用 crontab -e 的命令来启用自动任务，命令行：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
-</code></pre></div><p>添加配置：（每隔两个月凌晨2:30自动执行证书更新操作）后保存退出。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=m>30</span> <span class=m>2</span> * */2 * /usr/bin/certbot renew --quiet <span class=o>&amp;&amp;</span> /bin/systemctl restart nginx
-</code></pre></div><p>查看证书有效期的命令：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>openssl x509 -noout -dates -in /etc/letsencrypt/live/bore.vip/cert.pem
-</code></pre></div><h2 id=参考链接>参考链接</h2>
+</code></pre></td></tr></table>
+</div>
+</div><p>在无法确认你的 nginx 配置是否正确时，一定要运行模拟更新命令，确保certbot和服务器通讯正常。使用 crontab -e 的命令来启用自动任务，命令行：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
+</code></pre></td></tr></table>
+</div>
+</div><p>添加配置：（每隔两个月凌晨2:30自动执行证书更新操作）后保存退出。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=m>30</span> <span class=m>2</span> * */2 * /usr/bin/certbot renew --quiet <span class=o>&amp;&amp;</span> /bin/systemctl restart nginx
+</code></pre></td></tr></table>
+</div>
+</div><p>查看证书有效期的命令：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>openssl x509 -noout -dates -in /etc/letsencrypt/live/bore.vip/cert.pem
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=参考链接>参考链接</h2>
 <ul>
 <li><a class=link href="https://help.aliyun.com/document_detail/98728.html?spm=5176.2020520163.cas.13.6053jBDQjBDQPD" target=_blank rel=noopener>1.在Nginx/Tengine服务器上安装证书</a></li>
 <li><a class=link href=https://www.ratel.net.cn/2019/07/18/%E9%98%BF%E9%87%8C%E4%BA%91hexo%E7%AB%99%E7%82%B9https%E4%B9%8Bnginx%E9%85%8D%E7%BD%AE/ target=_blank rel=noopener>2.阿里云hexo站点https之nginx配置</a></li>
@@ -285,7 +529,7 @@ The following certs could not be renewed:
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

@@ -1,14 +1,14 @@
 <!doctype html><html lang=zh-cn>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="接上篇Centos8安装xfce&amp;amp;vnc，接下来记下，怎样在centos 服务器上挂机。 安装、更新firefox 安装firefox yum install"><title>Centos8挂机笔记</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="接上篇Centos8安装xfce&amp;amp;vnc，接下来记下，怎样在centos 服务器上挂机。 安装、更新firefox 安装firefox 1 yum"><title>Centos8挂机笔记</title>
 <link rel=canonical href=/archives/centos8-gua-ji/>
 <link rel=stylesheet href=/scss/style.min.16cf5e09a1fbb893e397056354f42a6c4e97f90e600dfa8128d1a659e6a17083.css><meta property="og:title" content="Centos8挂机笔记">
-<meta property="og:description" content="接上篇Centos8安装xfce&amp;amp;vnc，接下来记下，怎样在centos 服务器上挂机。 安装、更新firefox 安装firefox yum install">
+<meta property="og:description" content="接上篇Centos8安装xfce&amp;amp;vnc，接下来记下，怎样在centos 服务器上挂机。 安装、更新firefox 安装firefox 1 yum">
 <meta property="og:url" content="/archives/centos8-gua-ji/">
 <meta property="og:site_name" content="Bore's Notes">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="服务器"><meta property="article:published_time" content="2020-05-18T15:33:25+08:00"><meta property="article:modified_time" content="2020-05-18T15:33:25+08:00">
 <meta name=twitter:title content="Centos8挂机笔记">
-<meta name=twitter:description content="接上篇Centos8安装xfce&amp;amp;vnc，接下来记下，怎样在centos 服务器上挂机。 安装、更新firefox 安装firefox yum install">
+<meta name=twitter:description content="接上篇Centos8安装xfce&amp;amp;vnc，接下来记下，怎样在centos 服务器上挂机。 安装、更新firefox 安装firefox 1 yum">
 <link rel="shortcut icon" href=/img/favicon.png>
 </head>
 <body class="article-page has-toc">
@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-1464 字
+1485 字
 </time>
 </div>
 </footer>
@@ -48,41 +48,94 @@ extended">
 <p>接上篇<a class=link href=https://bore.vip/post/centos8-xfce-vnc/ target=_blank rel=noopener>Centos8安装xfce&vnc</a>，接下来记下，怎样在centos 服务器上挂机。</p>
 <h2 id=安装更新firefox>安装、更新firefox</h2>
 <h3 id=安装firefox>安装firefox</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install firefox -y
-</code></pre></div><h3 id=更新firefox>更新firefox</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install firefox -y
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=更新firefox>更新firefox</h3>
 <ol>
 <li>用你本地的旧版 firefox，访问火狐官网，下载Linux版本的Firefox，因为我的是64位故选择的安装包是：<code>Firefox-latest-x86_64.tar.bz2</code>。</li>
 <li>进入存放下载文件（Firefox-latest-x86_64.tar.bz2）的目录。</li>
 <li>在该目录解压 Firefox-latest-x86_64.tar.bz2。</li>
 </ol>
 <p>解压后会生成一个 firefox 子目录，里面有最新版本的 firefox 的二进制可执行文件，以及各种扩展模块，插件等等。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install tar -y
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install tar -y
 yum install bzip2 -y
 tar -xjvf Firefox-latest-x86_64.tar.bz2
-</code></pre></div><ol start=4>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=4>
 <li>由于有时解压后出来的文件缺少文件（原因不明），可以采用在外部解压好后，直接拷贝出firefox文件夹的方式。</li>
 <li>删除系统默认安装的旧版 firefox ，通常位于 /usr/lib64 目录下。</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>rm -rf /usr/lib64/firefox
-</code></pre></div><ol start=6>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>rm -rf /usr/lib64/firefox
+</code></pre></td></tr></table>
+</div>
+</div><ol start=6>
 <li>将当前目录下的新版 firefox 子目录复制到 /usr/lib64 目录下。</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>mv firefox /usr/lib64
-</code></pre></div><ol start=7>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>mv firefox /usr/lib64
+</code></pre></td></tr></table>
+</div>
+</div><ol start=7>
 <li>进入 /usr/bin 目录，删除其下的 firefox 脚本。</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> /usr/bin
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> /usr/bin
 rm firefox
-</code></pre></div><ol start=8>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=8>
 <li>回到主目录或根目录，创建一个软链接，指向/usr/lib64/firefox/firefox。</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span>
 ln -s /usr/lib64/firefox/firefox /usr/bin/firefox
-</code></pre></div><ol start=9>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=9>
 <li>查看下最新版本</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>firefox -v
-</code></pre></div><h2 id=firefox优化>firefox优化</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>firefox -v
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=firefox优化>firefox优化</h2>
 <h3 id=设置开机启动>设置开机启动</h3>
 <p>单击桌面下面最左边的那个X一样的图标选<code>settings–Autostarted applications</code>在弹出的对话框中点击Add,在name中输<code>firefox</code>,Description不用输入，Command中输入<code>firefox</code>如此firefox的开机启动也设置好了!接下来reboot一下看看是否能正常工作!</p>
 <h3 id=设置不保存历史记录>设置不保存历史记录</h3>
@@ -120,9 +173,29 @@ ln -s /usr/lib64/firefox/firefox /usr/bin/firefox
 <li>Auto Add Playlists，选择<code>true</code></li>
 </ul>
 <h2 id=设置定时任务>设置定时任务</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> /var/spool/cron 
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> /var/spool/cron 
 vi root
-</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=m>00</span> <span class=m>00</span> * * * rm -rf /root/.vnc/*.log
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=m>00</span> <span class=m>00</span> * * * rm -rf /root/.vnc/*.log
 <span class=m>01</span> <span class=m>00</span> * * * /sbin/reboot
 <span class=m>00</span> <span class=m>06</span> * * * rm -rf /root/.vnc/*.log
 <span class=m>01</span> <span class=m>06</span> * * * /sbin/reboot
@@ -130,7 +203,9 @@ vi root
 <span class=m>01</span> <span class=m>12</span> * * * /sbin/reboot
 <span class=m>00</span> <span class=m>18</span> * * * rm -rf /root/.vnc/*.log
 <span class=m>01</span> <span class=m>18</span> * * * /sbin/reboot
-</code></pre></div><h2 id=参考链接>参考链接</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=参考链接>参考链接</h2>
 <ul>
 <li>
 <p><a class=link href=https://www.iteye.com/blog/wangbanmin-2397404 target=_blank rel=noopener>1.centos系统crontab实现自动定时重启教程</a></p>
@@ -163,7 +238,7 @@ vi root
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

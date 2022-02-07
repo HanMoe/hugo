@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-4919 字
+5269 字
 </time>
 </div>
 </footer>
@@ -50,19 +50,273 @@ extended">
 <ol>
 <li>下载主题</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git init
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git init
 git submodule add https://github.com/CaiJimmy/hugo-theme-stack/ themes/hugo-theme-stack
-</code></pre></div><ol start=2>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
 <li>更新主题</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --remote
-</code></pre></div><h2 id=查看主题版本号>查看主题版本号</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git show 查看当前版本
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --remote
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=查看主题版本号>查看主题版本号</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git show 查看当前版本
 ----------------------------------------------------------------
 git tag　列出所有版本号
 git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源码会变成这个版本号的源码<span class=o>)</span>
-</code></pre></div><h2 id=configyaml配置文件><code>config.yaml</code>配置文件</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>baseurl</span><span class=p>:</span><span class=w> </span><span class=l>/</span><span class=w>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=configyaml配置文件><code>config.yaml</code>配置文件</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>  1
+</span><span class=lnt>  2
+</span><span class=lnt>  3
+</span><span class=lnt>  4
+</span><span class=lnt>  5
+</span><span class=lnt>  6
+</span><span class=lnt>  7
+</span><span class=lnt>  8
+</span><span class=lnt>  9
+</span><span class=lnt> 10
+</span><span class=lnt> 11
+</span><span class=lnt> 12
+</span><span class=lnt> 13
+</span><span class=lnt> 14
+</span><span class=lnt> 15
+</span><span class=lnt> 16
+</span><span class=lnt> 17
+</span><span class=lnt> 18
+</span><span class=lnt> 19
+</span><span class=lnt> 20
+</span><span class=lnt> 21
+</span><span class=lnt> 22
+</span><span class=lnt> 23
+</span><span class=lnt> 24
+</span><span class=lnt> 25
+</span><span class=lnt> 26
+</span><span class=lnt> 27
+</span><span class=lnt> 28
+</span><span class=lnt> 29
+</span><span class=lnt> 30
+</span><span class=lnt> 31
+</span><span class=lnt> 32
+</span><span class=lnt> 33
+</span><span class=lnt> 34
+</span><span class=lnt> 35
+</span><span class=lnt> 36
+</span><span class=lnt> 37
+</span><span class=lnt> 38
+</span><span class=lnt> 39
+</span><span class=lnt> 40
+</span><span class=lnt> 41
+</span><span class=lnt> 42
+</span><span class=lnt> 43
+</span><span class=lnt> 44
+</span><span class=lnt> 45
+</span><span class=lnt> 46
+</span><span class=lnt> 47
+</span><span class=lnt> 48
+</span><span class=lnt> 49
+</span><span class=lnt> 50
+</span><span class=lnt> 51
+</span><span class=lnt> 52
+</span><span class=lnt> 53
+</span><span class=lnt> 54
+</span><span class=lnt> 55
+</span><span class=lnt> 56
+</span><span class=lnt> 57
+</span><span class=lnt> 58
+</span><span class=lnt> 59
+</span><span class=lnt> 60
+</span><span class=lnt> 61
+</span><span class=lnt> 62
+</span><span class=lnt> 63
+</span><span class=lnt> 64
+</span><span class=lnt> 65
+</span><span class=lnt> 66
+</span><span class=lnt> 67
+</span><span class=lnt> 68
+</span><span class=lnt> 69
+</span><span class=lnt> 70
+</span><span class=lnt> 71
+</span><span class=lnt> 72
+</span><span class=lnt> 73
+</span><span class=lnt> 74
+</span><span class=lnt> 75
+</span><span class=lnt> 76
+</span><span class=lnt> 77
+</span><span class=lnt> 78
+</span><span class=lnt> 79
+</span><span class=lnt> 80
+</span><span class=lnt> 81
+</span><span class=lnt> 82
+</span><span class=lnt> 83
+</span><span class=lnt> 84
+</span><span class=lnt> 85
+</span><span class=lnt> 86
+</span><span class=lnt> 87
+</span><span class=lnt> 88
+</span><span class=lnt> 89
+</span><span class=lnt> 90
+</span><span class=lnt> 91
+</span><span class=lnt> 92
+</span><span class=lnt> 93
+</span><span class=lnt> 94
+</span><span class=lnt> 95
+</span><span class=lnt> 96
+</span><span class=lnt> 97
+</span><span class=lnt> 98
+</span><span class=lnt> 99
+</span><span class=lnt>100
+</span><span class=lnt>101
+</span><span class=lnt>102
+</span><span class=lnt>103
+</span><span class=lnt>104
+</span><span class=lnt>105
+</span><span class=lnt>106
+</span><span class=lnt>107
+</span><span class=lnt>108
+</span><span class=lnt>109
+</span><span class=lnt>110
+</span><span class=lnt>111
+</span><span class=lnt>112
+</span><span class=lnt>113
+</span><span class=lnt>114
+</span><span class=lnt>115
+</span><span class=lnt>116
+</span><span class=lnt>117
+</span><span class=lnt>118
+</span><span class=lnt>119
+</span><span class=lnt>120
+</span><span class=lnt>121
+</span><span class=lnt>122
+</span><span class=lnt>123
+</span><span class=lnt>124
+</span><span class=lnt>125
+</span><span class=lnt>126
+</span><span class=lnt>127
+</span><span class=lnt>128
+</span><span class=lnt>129
+</span><span class=lnt>130
+</span><span class=lnt>131
+</span><span class=lnt>132
+</span><span class=lnt>133
+</span><span class=lnt>134
+</span><span class=lnt>135
+</span><span class=lnt>136
+</span><span class=lnt>137
+</span><span class=lnt>138
+</span><span class=lnt>139
+</span><span class=lnt>140
+</span><span class=lnt>141
+</span><span class=lnt>142
+</span><span class=lnt>143
+</span><span class=lnt>144
+</span><span class=lnt>145
+</span><span class=lnt>146
+</span><span class=lnt>147
+</span><span class=lnt>148
+</span><span class=lnt>149
+</span><span class=lnt>150
+</span><span class=lnt>151
+</span><span class=lnt>152
+</span><span class=lnt>153
+</span><span class=lnt>154
+</span><span class=lnt>155
+</span><span class=lnt>156
+</span><span class=lnt>157
+</span><span class=lnt>158
+</span><span class=lnt>159
+</span><span class=lnt>160
+</span><span class=lnt>161
+</span><span class=lnt>162
+</span><span class=lnt>163
+</span><span class=lnt>164
+</span><span class=lnt>165
+</span><span class=lnt>166
+</span><span class=lnt>167
+</span><span class=lnt>168
+</span><span class=lnt>169
+</span><span class=lnt>170
+</span><span class=lnt>171
+</span><span class=lnt>172
+</span><span class=lnt>173
+</span><span class=lnt>174
+</span><span class=lnt>175
+</span><span class=lnt>176
+</span><span class=lnt>177
+</span><span class=lnt>178
+</span><span class=lnt>179
+</span><span class=lnt>180
+</span><span class=lnt>181
+</span><span class=lnt>182
+</span><span class=lnt>183
+</span><span class=lnt>184
+</span><span class=lnt>185
+</span><span class=lnt>186
+</span><span class=lnt>187
+</span><span class=lnt>188
+</span><span class=lnt>189
+</span><span class=lnt>190
+</span><span class=lnt>191
+</span><span class=lnt>192
+</span><span class=lnt>193
+</span><span class=lnt>194
+</span><span class=lnt>195
+</span><span class=lnt>196
+</span><span class=lnt>197
+</span><span class=lnt>198
+</span><span class=lnt>199
+</span><span class=lnt>200
+</span><span class=lnt>201
+</span><span class=lnt>202
+</span><span class=lnt>203
+</span><span class=lnt>204
+</span><span class=lnt>205
+</span><span class=lnt>206
+</span><span class=lnt>207
+</span><span class=lnt>208
+</span><span class=lnt>209
+</span><span class=lnt>210
+</span><span class=lnt>211
+</span><span class=lnt>212
+</span><span class=lnt>213
+</span><span class=lnt>214
+</span><span class=lnt>215
+</span><span class=lnt>216
+</span><span class=lnt>217
+</span><span class=lnt>218
+</span><span class=lnt>219
+</span><span class=lnt>220
+</span><span class=lnt>221
+</span><span class=lnt>222
+</span><span class=lnt>223
+</span><span class=lnt>224
+</span><span class=lnt>225
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>baseurl</span><span class=p>:</span><span class=w> </span><span class=l>/</span><span class=w>
 </span><span class=w></span><span class=nt>languageCode</span><span class=p>:</span><span class=w> </span><span class=l>zh-CN</span><span class=w>
 </span><span class=w></span><span class=nt>theme</span><span class=p>:</span><span class=w> </span><span class=l>hugo-theme-stack</span><span class=w>
 </span><span class=w></span><span class=nt>paginate</span><span class=p>:</span><span class=w> </span><span class=m>10</span><span class=w>
@@ -287,8 +541,25 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 </span><span class=w>        </span><span class=nt>startLevel</span><span class=p>:</span><span class=w> </span><span class=m>2</span><span class=w>
 </span><span class=w>    </span><span class=nt>highlight</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>noClasses</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
-</span></code></pre></div><h2 id=archetypes默认模板><code>archetypes</code>默认模板</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;{{ replace .TranslationBaseName &#34;</span>-<span class=s2>&#34; &#34;</span><span class=w> </span><span class=s2>&#34; | title }}&#34;</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=archetypes默认模板><code>archetypes</code>默认模板</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;{{ replace .TranslationBaseName &#34;</span>-<span class=s2>&#34; &#34;</span><span class=w> </span><span class=s2>&#34; | title }}&#34;</span><span class=w>
 </span><span class=w></span><span class=nt>slug</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
 </span><span class=w></span><span class=nt>description</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
 </span><span class=w></span><span class=nt>date</span><span class=p>:</span><span class=w> </span>{{<span class=w> </span><span class=l>.Date }}</span><span class=w>
@@ -299,12 +570,32 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 </span><span class=w></span><span class=nt>image</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;&#34;</span><span class=w>
 </span><span class=w></span><span class=nt>categories</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s2>&#34;&#34;</span><span class=p>]</span><span class=w>
 </span><span class=w></span><span class=nt>tags</span><span class=p>:</span><span class=w> </span><span class=p>[</span><span class=s2>&#34;&#34;</span><span class=p>]</span><span class=w>
-</span></code></pre></div><h2 id=显示右侧工具栏分类目录>显示右侧工具栏分类目录</h2>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=显示右侧工具栏分类目录>显示右侧工具栏分类目录</h2>
 <p>参考 <a class=link href=https://github.com/CaiJimmy/hugo-theme-stack/issues/169 target=_blank rel=noopener>https://github.com/CaiJimmy/hugo-theme-stack/issues/169</a></p>
 <ol>
 <li>Create <code>categories.html</code> in layouts/partials/widget</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>section</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;widget tagCloud&#34;</span><span class=p>&gt;</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>section</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;widget tagCloud&#34;</span><span class=p>&gt;</span>
   <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;widget-icon&#34;</span><span class=p>&gt;</span>
       {{ partial &#34;helper/icon&#34; &#34;categories&#34; }}
   <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
@@ -318,23 +609,47 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
       {{ end }}
   <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
 <span class=p>&lt;/</span><span class=nt>section</span><span class=p>&gt;</span>
-</code></pre></div><ol start=2>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
 <li>修改 <code>config.yaml</code></li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>widgets</span><span class=p>:</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>widgets</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>enabled</span><span class=p>:</span><span class=w>
 </span><span class=w>            </span>- <span class=l>categories</span><span class=w>
 </span><span class=w>        
 </span><span class=w>        </span><span class=nt>categoriesCloud</span><span class=p>:</span><span class=w>
 </span><span class=w>            </span><span class=nt>limit</span><span class=p>:</span><span class=w> </span><span class=m>20</span><span class=w>
-</span></code></pre></div><ol start=3>
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=3>
 <li>网站根目录新建<code>\i18n\zh-CN.yaml</code></li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>widget</span><span class=p>:</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>widget</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>categoriesCloud</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>title</span><span class=p>:</span><span class=w> 
 </span><span class=w>            </span><span class=nt>other</span><span class=p>:</span><span class=w> </span><span class=l>分类</span><span class=w>
-</span></code></pre></div><ol start=5>
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=5>
 <li>Download categories.svg paste to <code>assets/icons</code>, from <a class=link href=https://github.com/rmdhnreza/rmdhnreza.my.id/tree/main/assets/icons target=_blank rel=noopener>here</a></li>
 </ol>
 <blockquote>
@@ -344,7 +659,37 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 <ol>
 <li>拷贝主题目录<code>/layouts/partials/article/components/footer.html</code>到网站根目录，修改为：</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>footer</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;article-footer&#34;</span><span class=p>&gt;</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>footer</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;article-footer&#34;</span><span class=p>&gt;</span>
     {{ partial &#34;article/components/tags&#34; . }}
 
     {{ if and (.Site.Params.article.license.enabled) (not (eq .Params.license false)) }}
@@ -370,10 +715,25 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
     <span class=p>&lt;/</span><span class=nt>section</span><span class=p>&gt;</span>
     {{- end -}}
 <span class=p>&lt;/</span><span class=nt>footer</span><span class=p>&gt;</span>
-</code></pre></div><ol start=2>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=2>
 <li>编辑<code>config.yaml</code>：</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=w>    </span><span class=nt>article</span><span class=p>:</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=w>    </span><span class=nt>article</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>math</span><span class=p>:</span><span class=w> </span><span class=kc>false</span><span class=w>
 </span><span class=w>        </span><span class=nt>toc</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
 </span><span class=w>        </span><span class=nt>readingTime</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w> 
@@ -382,26 +742,72 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 </span><span class=w>            </span><span class=nt>default</span><span class=p>:</span><span class=w> </span><span class=l>Licensed under CC BY-NC-SA 4.0</span><span class=w>
 </span><span class=w>        </span><span class=nt>edit</span><span class=p>:</span><span class=w>
 </span><span class=w>            </span><span class=nt>enabled</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
-</span></code></pre></div><p>以后只要在Frontmatter添加<code>edit: false</code>来关闭。</p>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>以后只要在Frontmatter添加<code>edit: false</code>来关闭。</p>
 <ol start=3>
 <li>拷贝<code>external-link.svg</code>图标到网站根目录<code>/assets/icons</code>下。图标地址：<a class=link href=https://github.com/iwyang/iwyang.github.io/tree/develop/assets/icons target=_blank rel=noopener>点击直达</a></li>
 </ol>
 <h2 id=自动更新文章最后修改时间>自动更新文章最后修改时间</h2>
 <p>在<code>config.yaml</code>里写:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>frontmatter:
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>frontmatter:
   lastmod: [&#34;:fileModTime&#34;, &#34;lastmod&#34;]
-</code></pre></div><p>如果加上":git"，就可以读取 git 推送的时间。不过貌似这样设置后，会更新所有文章的更新时间。解决方法：<a class=link href=https://mantyke.icu/2021/47a5331b/ target=_blank rel=noopener>Hugo | 以正确姿势自动添加文章最后更新时间</a></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果加上":git"，就可以读取 git 推送的时间。不过貌似这样设置后，会更新所有文章的更新时间。解决方法：<a class=link href=https://mantyke.icu/2021/47a5331b/ target=_blank rel=noopener>Hugo | 以正确姿势自动添加文章最后更新时间</a></p>
 <p><strong>PS:还是手动更改更新时间简单，之所以本地预览<code>最后更新于</code>是对的，原因在于<code>github actions</code>出现了问题，要解决问题只有参照上面的解决方法，我选择手动更改更新时间</strong></p>
 <h3 id=隐藏页脚的最后更新于>隐藏页脚的<code>最后更新于</code></h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>style</span><span class=p>&gt;</span>
 <span class=p>.</span><span class=nc>article-footer</span> <span class=p>{</span>
     <span class=k>display</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
   <span class=p>}</span>
 <span class=p>&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
-</code></pre></div><h2 id=删除相关文章分类图片修改相关文章数目>删除相关文章、分类图片，修改相关文章数目</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=删除相关文章分类图片修改相关文章数目>删除相关文章、分类图片，修改相关文章数目</h2>
 <h3 id=删除相关文章图片>删除相关文章图片</h3>
 <p>根目录<code>assets/scss/partials/layout/article.scss</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=nc>.related-contents</span> <span class=p>{</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=nc>.related-contents</span> <span class=p>{</span>
     <span class=na>overflow-x</span><span class=o>:</span> <span class=ni>auto</span><span class=p>;</span>
     <span class=na>padding-bottom</span><span class=o>:</span> <span class=mi>15</span><span class=kt>px</span><span class=p>;</span>
 
@@ -422,9 +828,43 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 </span><span class=c1></span>            <span class=na>margin</span><span class=o>:</span> <span class=ni>auto</span><span class=p>;</span>
             <span class=na>justify-content</span><span class=o>:</span> <span class=ni>center</span><span class=p>;</span> <span class=c1>//居中
 </span><span class=c1></span>        <span class=p>}</span>
-</code></pre></div><h3 id=删除分类图片>删除分类图片</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=删除分类图片>删除分类图片</h3>
 <p>根目录<code>assets/scss/partials/layout/list.scss</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=nc>.subsection-list</span> <span class=p>{</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=nc>.subsection-list</span> <span class=p>{</span>
     <span class=na>margin-bottom</span><span class=o>:</span> <span class=nf>var</span><span class=p>(</span><span class=o>--</span><span class=n>section-separation</span><span class=p>);</span>
     <span class=na>overflow-x</span><span class=o>:</span> <span class=ni>auto</span><span class=p>;</span>
 
@@ -452,15 +892,37 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
         <span class=p>}</span>
     <span class=p>}</span>
 <span class=p>}</span>
-</code></pre></div><h3 id=修改相关文章数目>修改相关文章数目</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=修改相关文章数目>修改相关文章数目</h3>
 <p>根目录<code>layouts/partials/article/components/related-contents.html</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html> {{ $related := (where (.Site.RegularPages.Related .) &#34;Params.hidden&#34; &#34;!=&#34; true) | first 3 }}  //修改数字即可
-</code></pre></div><p>数字设为0，即关闭<code>相关文章</code>。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html> {{ $related := (where (.Site.RegularPages.Related .) &#34;Params.hidden&#34; &#34;!=&#34; true) | first 3 }}  //修改数字即可
+</code></pre></td></tr></table>
+</div>
+</div><p>数字设为0，即关闭<code>相关文章</code>。</p>
 <h2 id=加入字数统计站点总字数统计>加入字数统计、站点总字数统计</h2>
 <h3 id=加入字数统计>加入字数统计</h3>
 <p>1.直接用阅读时间改的，图标路径为根目录<code>assets\icons</code></p>
 <p>根目录<code>layouts\partials\article\components\details.html</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html>        {{ if .Site.Params.article.readingTime }}
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html>        {{ if .Site.Params.article.readingTime }}
             <span class=p>&lt;</span><span class=nt>div</span><span class=p>&gt;</span>
                 {{ partial &#34;helper/icon&#34; &#34;pencil&#34; }}
                 <span class=p>&lt;</span><span class=nt>time</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;article-words&#34;</span><span class=p>&gt;</span>
@@ -469,29 +931,108 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
             <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
         {{ end }}
     <span class=p>&lt;/</span><span class=nt>footer</span><span class=p>&gt;</span>
-</code></pre></div><p>2.然后在<code>config.yaml</code>中加入一行，以正确显示中文字符数量</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>hasCJKLanguage</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
-</span></code></pre></div><p>3.<code>config.yaml</code>中确保<code>readingTime: true</code></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.然后在<code>config.yaml</code>中加入一行，以正确显示中文字符数量</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>hasCJKLanguage</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>3.<code>config.yaml</code>中确保<code>readingTime: true</code></p>
 <h3 id=站点总字数统计>站点总字数统计</h3>
 <p>1.根目录<code>layouts\partials\footer\footer.html</code>里写上总字数参数</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{$scratch := newScratch}}
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{$scratch := newScratch}}
 {{ range (where .Site.Pages &#34;Kind&#34; &#34;page&#34; )}}
     {{$scratch.Add &#34;total&#34; .WordCount}}
 {{ end }}
-</code></pre></div><p>2.根目录<code>layouts\partials\footer\footer.html</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>section</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;copyright&#34;</span><span class=p>&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>2.根目录<code>layouts\partials\footer\footer.html</code></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html><span class=p>&lt;</span><span class=nt>section</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;copyright&#34;</span><span class=p>&gt;</span>
         <span class=ni>&amp;copy;</span> 
         {{ if and (.Site.Params.footer.since) (ne .Site.Params.footer.since (int (now.Format &#34;2006&#34;))) }}
             {{ .Site.Params.footer.since }} - 
         {{ end }}
         {{ now.Format &#34;2006&#34; }} Bore&#39;s Blog<span class=p>&lt;</span><span class=nt>br</span><span class=p>&gt;</span>共 {{ div ($scratch.Get &#34;total&#34;) 1000.0 | lang.FormatNumber 2 }}k 字 · 共 {{ len (where .Site.RegularPages &#34;Section&#34; &#34;post&#34;) }}篇文章<span class=p>&lt;/</span><span class=nt>br</span><span class=p>&gt;&lt;</span><span class=nt>span</span><span class=p>&gt;&lt;</span><span class=nt>p</span><span class=p>&gt;</span>
     <span class=p>&lt;/</span><span class=nt>section</span><span class=p>&gt;</span>
-</code></pre></div><p><strong>PS：如果加入<code>站点总字数统计</code>，<code>Github Action</code>部署到服务器就会变慢。</strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>PS：如果加入<code>站点总字数统计</code>，<code>Github Action</code>部署到服务器就会变慢。</strong></p>
 <h2 id=添加友情链接-shortcodes>添加友情链接 shortcodes</h2>
 <ol>
 <li>
 <p>网站根目录新建文件<code>layouts\page\links.html</code>：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{ define &#34;body-class&#34; }}article-page keep-sidebar{{ end }}
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{ define &#34;body-class&#34; }}article-page keep-sidebar{{ end }}
 {{ define &#34;main&#34; }}
     {{ partial &#34;article/article.html&#34; . }}
 
@@ -534,10 +1075,35 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 
     {{ partialCached &#34;article/components/photoswipe&#34; . }}
 {{ end }}
-</code></pre></div></li>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 <li>
 <p>网站根目录新建文件<code>\layouts\shortcodes\link.html</code>：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{$URL := .Get 0}}
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{$URL := .Get 0}}
 {{ with .Site.GetPage $URL }}
 <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;post-preview&#34;</span><span class=p>&gt;</span>
   <span class=p>&lt;</span><span class=nt>div</span> <span class=na>class</span><span class=o>=</span><span class=s>&#34;post-preview--meta&#34;</span> <span class=na>style</span><span class=o>=</span><span class=s>&#34;width:100%;&#34;</span><span class=p>&gt;</span>
@@ -556,11 +1122,91 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
   <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
 <span class=p>&lt;/</span><span class=nt>div</span><span class=p>&gt;</span>
 {{ end }}
-</code></pre></div><ol start=3>
+</code></pre></td></tr></table>
+</div>
+</div><ol start=3>
 <li><code>网站图像</code>放在网站根目录<code>\assets\link-img\</code>文件夹下。</li>
 <li>网站根目录新建文件<code>\data\links.json</code>：</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>[</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-json data-lang=json><span class=p>[</span>
     <span class=p>{</span>
         <span class=nt>&#34;title&#34;</span><span class=p>:</span> <span class=s2>&#34;Upptime&#34;</span><span class=p>,</span>
         <span class=nt>&#34;website&#34;</span><span class=p>:</span> <span class=s2>&#34;https://iwyang.github.io/check&#34;</span><span class=p>,</span>
@@ -634,11 +1280,37 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 		<span class=nt>&#34;description&#34;</span><span class=p>:</span> <span class=s2>&#34;机会总是垂青于有准备的人。&#34;</span>
     <span class=p>}</span>
 <span class=p>]</span>
-</code></pre></div></li>
+</code></pre></td></tr></table>
+</div>
+</div></li>
 </ol>
 <p>5.调整布局，设置友情链接为双栏：</p>
 <p>修改根目录<code>/assets/scss/custom.scss</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=c1>//友情链接双栏
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-scss data-lang=scss><span class=c1>//友情链接双栏
 </span><span class=c1></span><span class=k>@media</span> <span class=p>(</span><span class=na>min-width</span><span class=o>:</span> <span class=mi>1024</span><span class=kt>px</span><span class=p>)</span> <span class=p>{</span>
     <span class=nc>.article-list--compact.links</span> <span class=p>{</span>
         <span class=na>display</span><span class=o>:</span> <span class=ni>grid</span><span class=p>;</span>
@@ -658,9 +1330,63 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
         <span class=p>}</span>
     <span class=p>}</span>
 <span class=p>}</span>
-</code></pre></div><h2 id=添加音乐短代码>添加音乐短代码</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=添加音乐短代码>添加音乐短代码</h2>
 <p>1.网站根目录新建文件<code>layouts\shortcodes\music.html</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{- $scratch := .Page.Scratch.Get &#34;scratch&#34; -}}
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-html data-lang=html>{{- $scratch := .Page.Scratch.Get &#34;scratch&#34; -}}
 <span class=c>&lt;!-- require APlayer --&gt;</span>
 <span class=p>&lt;</span><span class=nt>link</span> <span class=na>rel</span><span class=o>=</span><span class=s>&#34;stylesheet&#34;</span> <span class=na>href</span><span class=o>=</span><span class=s>&#34;https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css&#34;</span><span class=p>&gt;</span>
 <span class=p>&lt;</span><span class=nt>style</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;text/css&#34;</span><span class=p>&gt;.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span><span class=p>{</span><span class=k>background</span><span class=p>:</span><span class=mh>#212121</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span><span class=p>.</span><span class=nc>aplayer-withlist</span> <span class=p>.</span><span class=nc>aplayer-info</span><span class=p>{</span><span class=k>border-bottom-color</span><span class=p>:</span><span class=mh>#5c5c5c</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span><span class=p>.</span><span class=nc>aplayer-fixed</span> <span class=p>.</span><span class=nc>aplayer-list</span><span class=p>{</span><span class=k>border-color</span><span class=p>:</span><span class=mh>#5c5c5c</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-body</span><span class=p>{</span><span class=k>background-color</span><span class=p>:</span><span class=mh>#212121</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-info</span><span class=p>{</span><span class=k>border-top-color</span><span class=p>:</span><span class=mh>#212121</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-info</span> <span class=p>.</span><span class=nc>aplayer-music</span> <span class=p>.</span><span class=nc>aplayer-title</span><span class=p>{</span><span class=k>color</span><span class=p>:</span><span class=mh>#fff</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-info</span> <span class=p>.</span><span class=nc>aplayer-music</span> <span class=p>.</span><span class=nc>aplayer-author</span><span class=p>{</span><span class=k>color</span><span class=p>:</span><span class=mh>#fff</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-info</span> <span class=p>.</span><span class=nc>aplayer-controller</span> <span class=p>.</span><span class=nc>aplayer-time</span><span class=p>{</span><span class=k>color</span><span class=p>:</span><span class=mh>#eee</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-info</span> <span class=p>.</span><span class=nc>aplayer-controller</span> <span class=p>.</span><span class=nc>aplayer-time</span> <span class=p>.</span><span class=nc>aplayer-icon</span> <span class=nt>path</span><span class=p>{</span><span class=n>fill</span><span class=p>:</span><span class=mh>#eee</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span><span class=p>{</span><span class=k>background-color</span><span class=p>:</span><span class=mh>#212121</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span><span class=p>::</span><span class=nd>-webkit-scrollbar-thumb</span><span class=p>{</span><span class=k>background-color</span><span class=p>:</span><span class=mh>#999</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span><span class=p>::</span><span class=nd>-webkit-scrollbar-thumb</span><span class=p>:</span><span class=nd>hover</span><span class=p>{</span><span class=k>background-color</span><span class=p>:</span><span class=mh>#bbb</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span> <span class=nt>li</span><span class=p>{</span><span class=k>color</span><span class=p>:</span><span class=mh>#fff</span><span class=p>;</span><span class=k>border-top-color</span><span class=p>:</span><span class=mh>#666</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span> <span class=nt>li</span><span class=p>:</span><span class=nd>hover</span><span class=p>{</span><span class=k>background</span><span class=p>:</span><span class=mh>#4e4e4e</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span> <span class=nt>li</span><span class=p>.</span><span class=nc>aplayer-list-light</span><span class=p>{</span><span class=k>background</span><span class=p>:</span><span class=mh>#6c6c6c</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span> <span class=nt>li</span> <span class=p>.</span><span class=nc>aplayer-list-index</span><span class=p>{</span><span class=k>color</span><span class=p>:</span><span class=mh>#ddd</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-list</span> <span class=nt>li</span> <span class=p>.</span><span class=nc>aplayer-list-author</span><span class=p>{</span><span class=k>color</span><span class=p>:</span><span class=mh>#ddd</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-lrc</span><span class=p>{</span><span class=k>text-shadow</span><span class=p>:</span><span class=mi>-1</span><span class=kt>px</span> <span class=mi>-1</span><span class=kt>px</span> <span class=mi>0</span> <span class=mh>#666</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-lrc</span><span class=p>:</span><span class=nd>before</span><span class=p>{</span><span class=k>background</span><span class=p>:</span><span class=kp>-moz-</span><span class=nb>linear-gradient</span><span class=p>(</span><span class=kc>top</span><span class=p>,</span> <span class=mh>#212121</span> <span class=mi>0</span><span class=kt>%</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span> <span class=mi>100</span><span class=kt>%</span><span class=p>);</span><span class=k>background</span><span class=p>:</span><span class=kp>-webkit-</span><span class=nb>linear-gradient</span><span class=p>(</span><span class=kc>top</span><span class=p>,</span> <span class=mh>#212121</span> <span class=mi>0</span><span class=kt>%</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span> <span class=mi>100</span><span class=kt>%</span><span class=p>);</span><span class=k>background</span><span class=p>:</span><span class=nb>linear-gradient</span><span class=p>(</span><span class=kc>to</span> <span class=kc>bottom</span><span class=p>,</span> <span class=mh>#212121</span> <span class=mi>0</span><span class=kt>%</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span> <span class=mi>100</span><span class=kt>%</span><span class=p>);</span><span class=k>filter</span><span class=p>:</span><span class=n>progid</span><span class=o>:</span><span class=n>DXImageTransform</span><span class=o>.</span><span class=n>Microsoft</span><span class=o>.</span><span class=nf>gradient</span><span class=p>(</span> <span class=n>startColorstr</span><span class=err>=</span><span class=s1>&#39;#212121&#39;</span><span class=p>,</span> <span class=n>endColorstr</span><span class=err>=</span><span class=s1>&#39;#00212121&#39;</span><span class=p>,</span><span class=n>GradientType</span><span class=err>=</span><span class=mi>0</span> <span class=p>)}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-lrc</span><span class=p>:</span><span class=nd>after</span><span class=p>{</span><span class=k>background</span><span class=p>:</span><span class=kp>-moz-</span><span class=nb>linear-gradient</span><span class=p>(</span><span class=kc>top</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span> <span class=mi>0</span><span class=kt>%</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mf>0.8</span><span class=p>)</span> <span class=mi>100</span><span class=kt>%</span><span class=p>);</span><span class=k>background</span><span class=p>:</span><span class=kp>-webkit-</span><span class=nb>linear-gradient</span><span class=p>(</span><span class=kc>top</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span> <span class=mi>0</span><span class=kt>%</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mf>0.8</span><span class=p>)</span> <span class=mi>100</span><span class=kt>%</span><span class=p>);</span><span class=k>background</span><span class=p>:</span><span class=nb>linear-gradient</span><span class=p>(</span><span class=kc>to</span> <span class=kc>bottom</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>0</span><span class=p>)</span> <span class=mi>0</span><span class=kt>%</span><span class=p>,</span> <span class=nb>rgba</span><span class=p>(</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mi>33</span><span class=p>,</span><span class=mf>0.8</span><span class=p>)</span> <span class=mi>100</span><span class=kt>%</span><span class=p>);</span><span class=k>filter</span><span class=p>:</span><span class=n>progid</span><span class=o>:</span><span class=n>DXImageTransform</span><span class=o>.</span><span class=n>Microsoft</span><span class=o>.</span><span class=nf>gradient</span><span class=p>(</span> <span class=n>startColorstr</span><span class=err>=</span><span class=s1>&#39;#00212121&#39;</span><span class=p>,</span> <span class=n>endColorstr</span><span class=err>=</span><span class=s1>&#39;#cc212121&#39;</span><span class=p>,</span><span class=n>GradientType</span><span class=err>=</span><span class=mi>0</span> <span class=p>)}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-lrc</span> <span class=nt>p</span><span class=p>{</span><span class=k>color</span><span class=p>:</span><span class=mh>#fff</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-miniswitcher</span><span class=p>{</span><span class=k>background</span><span class=p>:</span><span class=mh>#484848</span><span class=p>}.</span><span class=nc>dark-theme</span> <span class=p>.</span><span class=nc>aplayer</span> <span class=p>.</span><span class=nc>aplayer-miniswitcher</span> <span class=p>.</span><span class=nc>aplayer-icon</span> <span class=nt>path</span><span class=p>{</span><span class=n>fill</span><span class=p>:</span><span class=mh>#eee</span><span class=p>}&lt;/</span><span class=nt>style</span><span class=p>&gt;</span>
@@ -708,13 +1434,31 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
     <span class=p>&lt;</span><span class=nt>meting-js</span> <span class=na>server</span><span class=o>=</span><span class=s>&#34;{{ .Get 0 }}&#34;</span> <span class=na>type</span><span class=o>=</span><span class=s>&#34;{{ .Get 1 }}&#34;</span> <span class=na>id</span><span class=o>=</span><span class=s>&#34;{{ .Get 2 }}&#34;</span> <span class=na>theme</span><span class=o>=</span><span class=s>&#34;#2980b9&#34;</span><span class=p>&gt;&lt;/</span><span class=nt>meting-js</span><span class=p>&gt;</span>
 {{- end -}}
 {{- $scratch.Set &#34;music&#34; true -}}
-</code></pre></div><p>2.添加歌曲列表（注意：去掉注释/* */）</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>{{/* <span class=p>&lt;</span> <span class=nt>music</span> <span class=na>auto</span><span class=o>=</span><span class=s>&#34;https://music.163.com/#/playlist?id=60198&#34;</span><span class=p>&gt;</span> */}}
-</code></pre></div><p>3.添加单曲（注意：去掉注释/* */）</p>
-<pre tabindex=0><code>{{/* &lt; music server=&quot;netease&quot; type=&quot;song&quot; id=&quot;1868553&quot; &gt; */}}
+</code></pre></td></tr></table>
+</div>
+</div><p>2.添加歌曲列表（注意：去掉注释/* */）</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown>{{/* <span class=p>&lt;</span> <span class=nt>music</span> <span class=na>auto</span><span class=o>=</span><span class=s>&#34;https://music.163.com/#/playlist?id=60198&#34;</span><span class=p>&gt;</span> */}}
+</code></pre></td></tr></table>
+</div>
+</div><p>3.添加单曲（注意：去掉注释/* */）</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-fallback data-lang=fallback>{{/* &lt; music server=&#34;netease&#34; type=&#34;song&#34; id=&#34;1868553&#34; &gt; */}}
 或者
 {{/* &lt; music netease song 1868553 &gt; */}}
-</code></pre><p>4.其它参数</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>4.其它参数</p>
 <p><code>music</code> shortcode 有一些可以应用于以上三种方式的其它命名参数:</p>
 <ul>
 <li>
@@ -726,24 +1470,65 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 <ol>
 <li><code>content</code>目录下新建<code>categories\_index.md</code>:</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nn>---</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nn>---</span><span class=w>
 </span><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;分类&#34;</span><span class=w>
 </span><span class=w></span><span class=nn>---</span><span class=w>
-</span></code></pre></div><ol start=2>
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=2>
 <li><code>content</code>目录下新建<code>tags\_index.md</code>:</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nn>---</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nn>---</span><span class=w>
 </span><span class=w></span><span class=nt>title</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;标签&#34;</span><span class=w>
 </span><span class=w></span><span class=nn>---</span><span class=w>
-</span></code></pre></div><ol start=3>
+</span></code></pre></td></tr></table>
+</div>
+</div><ol start=3>
 <li>根目录<code>\i18n\zh-CN.yaml</code>输入：</li>
 </ol>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>list</span><span class=p>:</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>list</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>page</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>one</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;{{ .Count }} 页面&#34;</span><span class=w>
 </span><span class=w>        </span><span class=nt>other</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;{{ .Count }} 页面&#34;</span><span class=w>
-</span></code></pre></div><p>最终根目录<code>\i18n\zh-CN.yaml</code></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>list</span><span class=p>:</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>最终根目录<code>\i18n\zh-CN.yaml</code></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>list</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>page</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>one</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;{{ .Count }} 页面&#34;</span><span class=w>
 </span><span class=w>        </span><span class=nt>other</span><span class=p>:</span><span class=w> </span><span class=s2>&#34;{{ .Count }} 页面&#34;</span><span class=w>
@@ -752,27 +1537,57 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 </span><span class=w>    </span><span class=nt>categoriesCloud</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>title</span><span class=p>:</span><span class=w> 
 </span><span class=w>            </span><span class=nt>other</span><span class=p>:</span><span class=w> </span><span class=l>分类</span><span class=w>
-</span></code></pre></div><h2 id=附使用git-submodule管理hugo主题>附：使用Git Submodule管理Hugo主题</h2>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=附使用git-submodule管理hugo主题>附：使用Git Submodule管理Hugo主题</h2>
 <ul>
 <li>如果克隆库的时候要初始化子模块，请加上 <code>--recursive</code> 参数，如：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone -b develop git@github.com:iwyang/iwyang.github.io.git blog --recursive
-</code></pre></div><ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone -b develop git@github.com:iwyang/iwyang.github.io.git blog --recursive
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>如果已经克隆了主库但没初始化子模块，则用：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --init --recursive
-</code></pre></div><ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --init --recursive
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>如果已经克隆并初始化子模块，而需要从子模块的源更新这个子模块，则：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --recursive --remote
-</code></pre></div><p>更新之后主库的 git 差异中会显示新的 SHA 码，把这个差异选中提交即可。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --recursive --remote
+</code></pre></td></tr></table>
+</div>
+</div><p>更新之后主库的 git 差异中会显示新的 SHA 码，把这个差异选中提交即可。</p>
 <hr>
 <ul>
 <li>其他命令：在主仓库更新所有子模块：<code>git submodule foreach git pull origin master</code></li>
 </ul>
 <h2 id=附hugo注释>附：hugo注释</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>{{<span class=l>/* comment */}}</span><span class=w>
-</span></code></pre></div><h2 id=参考链接>参考链接</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml>{{<span class=l>/* comment */}}</span><span class=w>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=参考链接>参考链接</h2>
 <ul>
 <li>
 <p><a class=link href=https://docs.stack.jimmycai.com/zh/ target=_blank rel=noopener>Hugo 主题 Stack文档</a></p>
@@ -829,7 +1644,7 @@ git checkout　+某版本号　<span class=o>(</span>你当前文件夹下的源
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

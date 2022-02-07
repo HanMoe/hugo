@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-1296 字
+1307 字
 </time>
 </div>
 </footer>
@@ -58,23 +58,52 @@ extended">
 </blockquote>
 <h3 id=配置picgo>配置PicGo</h3>
 <p>在PicGo设置里作如下修改：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>设置日志文件：日志记录等级选择<span class=s2>&#34;错误-Error&#34;</span>和<span class=s2>&#34;提醒-Warn&#34;</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>设置日志文件：日志记录等级选择<span class=s2>&#34;错误-Error&#34;</span>和<span class=s2>&#34;提醒-Warn&#34;</span>
 时间戳重命名：开
 开启上传提示：开
 上传后自动复制URL：开
 选择显示的图床：只勾选githubPlus
-</code></pre></div><h3 id=安装npm>安装npm</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=安装npm>安装npm</h3>
 <p>由于PicGo的插件需要使用npm进行安装，如果你的电脑上没有安装npm，那么你是无法安装PicGo插件的，而我们接下来要使用一个额外的插件获得gitee支持，所以在此之前先完成npm的安装。访问node.js的<a class=link href=https://nodejs.org/en/ target=_blank rel=noopener>官网</a>，根据官网的指导下载并安装node.js。安装为了解决npm速度过慢问题，需更换镜像源：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm config <span class=nb>set</span> registry https://registry.npm.taobao.org
-</code></pre></div><h3 id=安装github-plus插件>安装github-plus插件</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm config <span class=nb>set</span> registry https://registry.npm.taobao.org
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=安装github-plus插件>安装github-plus插件</h3>
 <p>运行PicGo，单击插件设置，在搜索中输入github，安装搜索结果中的<a class=link href=https://github.com/zWingz/picgo-plugin-github-plus target=_blank rel=noopener>github-plus</a>。</p>
 <h3 id=配置ithub-plus插件>配置ithub-plus插件</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>repo</span><span class=p>:</span><span class=w> </span><span class=l>iwyang/pics</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>repo</span><span class=p>:</span><span class=w> </span><span class=l>iwyang/pics</span><span class=w>
 </span><span class=w></span><span class=nt>branch</span><span class=p>:</span><span class=w> </span><span class=l>master</span><span class=w>
 </span><span class=w></span><span class=nt>token</span><span class=p>:</span><span class=w> </span><span class=l>输入私人令牌</span><span class=w>
 </span><span class=w></span><span class=nt>customUrl</span><span class=p>:</span><span class=w> </span><span class=l>不用填</span><span class=w>
 </span><span class=w></span><span class=nt>origin</span><span class=p>:</span><span class=w> </span><span class=l>gitee   </span><span class=w>
-</span></code></pre></div><h3 id=上传和管理图片>上传和管理图片</h3>
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id=上传和管理图片>上传和管理图片</h3>
 <ul>
 <li>
 <p>单击上传区，选择链接格式，使用点击上传或剪贴板图片上传，PicGo会自动上传图片并将符合链接格式的链接复制到剪贴板，你只要按下Ctrl+v即可粘贴图片的链接。</p>
@@ -132,7 +161,7 @@ extended">
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

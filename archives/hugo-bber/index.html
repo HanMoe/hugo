@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-2960 字
+2920 字
 </time>
 </div>
 </footer>
@@ -57,26 +57,53 @@ extended">
 <p>进入<a class=link href=https://console.cloud.tencent.com/tcb/scf/index target=_blank rel=noopener>云函数</a>，修改自定义serverkey <code>bber</code> 并保存备用。</p>
 <p>6.进入云函数，修改自定义serverkey bber 并保存备用。</p>
 <p>7.扫码进入公众号，输入命名绑定。</p>
-<p><figure>
-<a href=https://cdn.jsdelivr.net/gh/iwyang/pic/202108171354632.jpg>
-<img src=https://cdn.jsdelivr.net/gh/iwyang/pic/202108171354632.jpg loading=lazy alt=bibi-0>
-</a>
-<figcaption>bibi-0</figcaption>
-</figure></p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>/bber 你刚刚设置的key,https://你的云函数HTTP访问地址/bber
+<p><img src=https://cdn.jsdelivr.net/gh/iwyang/pic/202108171354632.jpg loading=lazy alt=bibi-0></p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>/bber 你刚刚设置的key,https://你的云函数HTTP访问地址/bber
 
 比如: /bber mykey,https://balabala.ap-shanghai.app.tcloudbase.com/bber
-</code></pre></div><p><strong>8. 手动添加一条哔哔 <em>必须要有</em></strong></p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>8. 手动添加一条哔哔 <em>必须要有</em></strong></p>
 <p>进入腾讯云数据库->talks->文档列表->添加文档</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>字段: content
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>字段: content
 类型: string
 值: 随便
-</code></pre></div><p>点击确定</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>点击确定</p>
 <p>验证微信发送</p>
 <p>9.微信发送一条文字，返回哔哔成功，talks文档列表里多出来一条，即为服务部署成功。</p>
 <h2 id=前端部署>前端部署</h2>
 <p>1.打开Hugo的unsafe</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>markup</span><span class=p>:</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>markup</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>tableOfContents</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>endLevel</span><span class=p>:</span><span class=w> </span><span class=m>4</span><span class=w>
 </span><span class=w>        </span><span class=nt>ordered</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
@@ -86,8 +113,40 @@ extended">
 </span><span class=w>    </span><span class=nt>goldmark</span><span class=p>:</span><span class=w>
 </span><span class=w>        </span><span class=nt>renderer</span><span class=p>:</span><span class=w>
 </span><span class=w>            </span><span class=nt>unsafe</span><span class=p>:</span><span class=w> </span><span class=kc>true</span><span class=w>
-</span></code></pre></div><p>2.新建一个<em>markdown</em>文件</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#39;speak&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>speak</span><span class=p>&gt;</span>
+</span></code></pre></td></tr></table>
+</div>
+</div><p>2.新建一个<em>markdown</em>文件</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-markdown data-lang=markdown><span class=p>&lt;</span><span class=nt>div</span> <span class=na>id</span><span class=o>=</span><span class=s>&#39;speak&#39;</span><span class=p>&gt;&lt;/</span><span class=nt>speak</span><span class=p>&gt;</span>
 <span class=c>&lt;!-- 使用markdown渲染 --&gt;</span>
 <span class=c>&lt;!-- 使用markdown渲染 --&gt;</span>
 <span class=c>&lt;!-- &lt;script type=&#34;text/javascript&#34; src=&#34;https://cdn.jsdelivr.net/npm/ispeak-bber/ispeak-bber-md.min.js&#34; charset=&#34;utf-8&#34; &gt;&lt;/script&gt; --&gt;</span>
@@ -113,7 +172,9 @@ extended">
 </span><span class=c1></span>      <span class=nx>console</span><span class=p>.</span><span class=nx>log</span><span class=p>(</span><span class=s1>&#39;哔哔 加载完成&#39;</span><span class=p>)</span>
     <span class=p>})</span>
 <span class=p>&lt;/</span><span class=nt>script</span><span class=p>&gt;</span>
-</code></pre></div><h2 id=部署bber-weixin公众号>部署BBer-weixin公众号</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=部署bber-weixin公众号>部署BBer-weixin公众号</h2>
 <p>点击<a class=link href="https://console.cloud.tencent.com/tcb/env/index?action=CreateAndDeployCloudBaseProject&appUrl=https%3A%2F%2Fgithub.com%2Flmm214%2Fbber-weixin&branch=main" target=_blank rel=noopener>部署到云开发</a>将 BBer-weixin 微信公众号后端，一键部署到云开发。</p>
 <p>对接的微信公众号简要流程：</p>
 <p>1.点击 <a class=link href=https://console.cloud.tencent.com/tcb/scf/index target=_blank rel=noopener>bber-weixin</a> 云函数，右上角**【编辑】<strong>，开启</strong>【固定IP】<strong>，留存</strong>公网固定IP**。</p>
@@ -121,8 +182,15 @@ extended">
 <p>我将from <code>微信公众号</code>改成了<code>💎 WeChat</code></p>
 </blockquote>
 <p>2.进入<a class=link href=https://console.cloud.tencent.com/tcb/env/access target=_blank rel=noopener>环境-HTTP访问服务</a>，获取<code>触发路径链接</code>并留存，如以下格式：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>https://bb-f5c0f-222222.ap-shanghai.app.tcloudbase.com/bber-weixin
-</code></pre></div><p>3.打开 <a class=link href=https://mp.weixin.qq.com/ target=_blank rel=noopener>微信公众平台</a>，进入开发-基本配置，获取<code>AppID</code>和<code>AppSecret</code>留存，修改<code>IP白名单</code>为上一步的公网固定IP。继续服务器配置：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>https://bb-f5c0f-222222.ap-shanghai.app.tcloudbase.com/bber-weixin
+</code></pre></td></tr></table>
+</div>
+</div><p>3.打开 <a class=link href=https://mp.weixin.qq.com/ target=_blank rel=noopener>微信公众平台</a>，进入开发-基本配置，获取<code>AppID</code>和<code>AppSecret</code>留存，修改<code>IP白名单</code>为上一步的公网固定IP。继续服务器配置：</p>
 <blockquote>
 <p>消息加密方式选择<code>兼容模式</code></p>
 </blockquote>
@@ -130,18 +198,39 @@ extended">
 <p>一个<code>Token</code>，预设为 <code>weixin</code></p>
 <p><strong>!!!先不点，不点，不点，不点提交！！！</strong></p>
 <p>4.回 <a class=link href=https://console.cloud.tencent.com/tcb/scf/index target=_blank rel=noopener>bber-weixin</a> 云函数，填入<code>微信公众号appid</code>、<code>微信公众号appsecret</code> 保存。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>const <span class=nv>token</span> <span class=o>=</span> <span class=s1>&#39;weixin&#39;</span> // 微信公众号的服务器验证用的令牌 token
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>const <span class=nv>token</span> <span class=o>=</span> <span class=s1>&#39;weixin&#39;</span> // 微信公众号的服务器验证用的令牌 token
 //填入自己的微信公众号appid和appsecret
 var <span class=nv>wxappid</span> <span class=o>=</span> <span class=s1>&#39;微信公众号appid&#39;</span>,
     <span class=nv>wxappsecret</span> <span class=o>=</span> <span class=s1>&#39;微信公众号appsecret&#39;</span>,
-</code></pre></div><p>5.回 <a class=link href=https://mp.weixin.qq.com/ target=_blank rel=noopener>微信公众平台</a>，提交，验证成功！</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>5.回 <a class=link href=https://mp.weixin.qq.com/ target=_blank rel=noopener>微信公众平台</a>，提交，验证成功！</p>
 <p>6.回 <a class=link href=https://console.cloud.tencent.com/tcb/scf/index target=_blank rel=noopener>bber-weixin</a> 云函数，注释第44行代码，保存。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>   <span class=k>if</span><span class=o>(</span><span class=nv>tmpStr</span> <span class=o>==</span> signature<span class=o>){</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>   <span class=k>if</span><span class=o>(</span><span class=nv>tmpStr</span> <span class=o>==</span> signature<span class=o>){</span>
         //请求来源鉴权
         //成功后注释下行代码
         //return event.queryStringParameters.echostr //成功后注释本行代码
         //成功后注释上行代码
-</code></pre></div><p>7.手动配置或更新代码： <a class=link href=https://github.com/lmm214/bber-weixin/tree/main/bber-weixin target=_blank rel=noopener>https://github.com/lmm214/bber-weixin/tree/main/bber-weixin</a></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>7.手动配置或更新代码： <a class=link href=https://github.com/lmm214/bber-weixin/tree/main/bber-weixin target=_blank rel=noopener>https://github.com/lmm214/bber-weixin/tree/main/bber-weixin</a></p>
 <h2 id=公众号发布说说>公众号发布说说</h2>
 <p><del>接上面，部署好自己的公众号就可以用公众号发布了。这里注意利用公众号发图片。</del></p>
 <p>1.先在公众号发一张图片</p>
@@ -161,21 +250,46 @@ var <span class=nv>wxappid</span> <span class=o>=</span> <span class=s1>&#39;微
 <p>从 Github 下载安装这款 “HTTP 快捷方式” apk，安装后继续下文操作。</p>
 <p>下载地址：<a class=link href=https://github.com/Waboodoo/HTTP-Shortcuts/releases target=_blank rel=noopener>HTTP-Shortcuts</a></p>
 <p>打开 HTTP 快捷方式 App，选择新建快捷方式，自定义名称、描述，在 “基本设置” 中，设置方法为 “POST” 或 “GET”，URL 为</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber?key<span class=o>=</span>
-</code></pre></div><p>至于 key、from，我们设置为常量，text 则设置为变量 content，每次发布的时候填写说说内容。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber?key<span class=o>=</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>至于 key、from，我们设置为常量，text 则设置为变量 content，每次发布的时候填写说说内容。</p>
 <p>点击 URL 右侧的 {}，选择添加变量。常量 key 为你云函数里的 key，如果没有特别设置就是 bber。from 我们设置一个好玩的如<code>📱 Android 11</code>。添加一个变量 content。（个人觉得from直接设置为<code>Android</code>就行，不然免得以后安卓升级版本，还要跟着修改。）</p>
 <p>接着回到 URL 页面，补充完刚才添加的常量和变量，如以下格式：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber?key<span class=o>={</span>key<span class=o>}</span><span class=p>&amp;</span><span class=nv>from</span><span class=o>={</span>from<span class=o>}</span><span class=p>&amp;</span><span class=nv>text</span><span class=o>={</span>content<span class=o>}</span>
-</code></pre></div><p>右上角，保存这个快捷方式，然后长按发送到桌面，搞定！</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>https://你后台显示的.ap-shanghai.app.tcloudbase.com/bber?key<span class=o>={</span>key<span class=o>}</span><span class=p>&amp;</span><span class=nv>from</span><span class=o>={</span>from<span class=o>}</span><span class=p>&amp;</span><span class=nv>text</span><span class=o>={</span>content<span class=o>}</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>右上角，保存这个快捷方式，然后长按发送到桌面，搞定！</p>
 <h2 id=修改ispeak-bber样式>修改<code>ispeak-bber</code>样式</h2>
 <h3 id=隐藏页面标题>隐藏页面标题</h3>
 <p>将以下代码放在文章正文最上方。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=o>&lt;</span><span class=nt>style</span><span class=o>&gt;</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-css data-lang=css><span class=o>&lt;</span><span class=nt>style</span><span class=o>&gt;</span>
 <span class=p>.</span><span class=nc>article-header</span> <span class=p>{</span>
     <span class=k>display</span><span class=p>:</span> <span class=kc>none</span><span class=p>;</span>
   <span class=p>}</span>
 <span class=o>&lt;/</span><span class=nt>style</span><span class=o>&gt;</span>
-</code></pre></div><h3 id=修改顶部文字>修改顶部文字</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=修改顶部文字>修改顶部文字</h3>
 <p>自己胡乱改的，居然起了作用。不管了先用再说。</p>
 <p>1.首先下载：<a class=link href=https://cdn.jsdelivr.net/npm/ispeak-bber/ispeak-bber-md.min.js target=_blank rel=noopener>ispeak-bber-md.min.js</a></p>
 <p>2.用<code>Notepad++</code>打开，搜索<code>My BiBi</code>改成<code>我的说说</code>。</p>
@@ -183,13 +297,33 @@ var <span class=nv>wxappid</span> <span class=o>=</span> <span class=s1>&#39;微
 <p>4.接着改图标大小，一样方法定位图标，可以发现<code>color: black</code>后面就是图标大小，搜索<code>color: black</code>，将后面图标大小改成22px：<code>font-size: 22px</code></p>
 <h3 id=修复说说出现图片时顶部空白过大问题>修复说说出现图片时，顶部空白过大问题</h3>
 <p>搜索<code>white-space</code>作如下修改</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-diff data-lang=diff><span class=gd>- {\n  padding: 10px 0;\n  white-space: pre-wrap;\n}
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-diff data-lang=diff><span class=gd>- {\n  padding: 10px 0;\n  white-space: pre-wrap;\n}
 </span><span class=gd></span><span class=gi>+ {\n  padding: 0.8rem 0;\n}
-</span></code></pre></div><p><del>注意：利用微信公众号发图片后追加文字说明，前面要加个换行符，要不然图片和文字处在同一行。</del></p>
+</span></code></pre></td></tr></table>
+</div>
+</div><p><del>注意：利用微信公众号发图片后追加文字说明，前面要加个换行符，要不然图片和文字处在同一行。</del></p>
 <p>注意：用公众号发图片会一连发几张，不知道是什么原因，以后就用浏览器插件发图片，注意<strong>比例 16:9，长度568px</strong></p>
 <h3 id=解决公众号连续发多张图片>解决公众号连续发多张图片</h3>
 <p>云函数代码问题，改成下面这样即可（<strong>还未测试</strong>）：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>104行
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>104行
 <span class=nb>let</span> <span class=nv>res</span> <span class=o>=</span> await cloudRequest<span class=o>(</span>cloudHttpUrl,cloudKey,createTime,content<span class=o>)</span>
 
 124行
@@ -197,10 +331,20 @@ var <span class=nv>wxappid</span> <span class=o>=</span> <span class=s1>&#39;微
 
 160行
 <span class=k>function</span> cloudRequest<span class=o>(</span>cloudHttpUrl,cloudKey,createTime,content<span class=o>){</span>
-</code></pre></div><p>中，删掉 “createTime,”，接着</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>162行
+</code></pre></td></tr></table>
+</div>
+</div><p>中，删掉 “createTime,”，接着</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>162行
 var <span class=nv>param1</span> <span class=o>=</span> <span class=o>{</span><span class=s1>&#39;key&#39;</span>: cloudKey,<span class=s1>&#39;time&#39;</span>: createTime,<span class=s1>&#39;text&#39;</span>: content,<span class=s1>&#39;from&#39;</span>:<span class=s1>&#39;微信公众号&#39;</span><span class=o>}</span>
-</code></pre></div><p>删掉 “’time’: createTime,” 就解决了。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>删掉 “’time’: createTime,” 就解决了。</p>
 <h2 id=参考链接>参考链接</h2>
 <p><a class=link href=https://immmmm.com/bb-by-wechat-pro/ target=_blank rel=noopener>「哔哔点啥」微信公众号 2.0</a></p>
 <p><a class=link href=https://immmmm.com/bb-talks-json/ target=_blank rel=noopener>熟悉的味道，不一样配方</a></p>
@@ -237,7 +381,7 @@ var <span class=nv>param1</span> <span class=o>=</span> <span class=o>{</span><s
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

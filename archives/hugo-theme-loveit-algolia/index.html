@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-985 字
+1032 字
 </time>
 </div>
 </footer>
@@ -68,35 +68,116 @@ extended">
 <ul>
 <li>安装 atomic-algolia 包</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm init  // 初始化，不懂的就一直回车就好了
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm init  // 初始化，不懂的就一直回车就好了
 npm install atomic-algolia --save
-</code></pre></div><p>执行完后会生成 <code>node_modules</code> 文件夹（如果代码托管在 GitHub 的话，可以在<code>.gitignore</code>中添加<code>/node_modules</code>以忽略该文件）。在项目根目录下还会有一个<code>package.json</code>文件，打开该文件：</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>执行完后会生成 <code>node_modules</code> 文件夹（如果代码托管在 GitHub 的话，可以在<code>.gitignore</code>中添加<code>/node_modules</code>以忽略该文件）。在项目根目录下还会有一个<code>package.json</code>文件，打开该文件：</p>
 <ul>
 <li>修改根目录下的 <code>package.json</code> 文件，在 <code>scripts</code> 下添加 <code>"algolia": "atomic-algolia"</code></li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=s2>&#34;scripts&#34;</span>: <span class=o>{</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=s2>&#34;scripts&#34;</span>: <span class=o>{</span>
     <span class=s2>&#34;test&#34;</span>: <span class=s2>&#34;echo \&#34;Error: no test specified\&#34; &amp;&amp; exit 1&#34;</span>,
     <span class=s2>&#34;algolia&#34;</span>: <span class=s2>&#34;atomic-algolia&#34;</span>
 <span class=o>}</span>,
-</code></pre></div><p>注意 <code>"test"</code> 那一行末尾有个英文逗号，不要漏了。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>注意 <code>"test"</code> 那一行末尾有个英文逗号，不要漏了。</p>
 <ul>
 <li>根目录下新建 <code>.env</code> 文件，内容如下：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>ALGOLIA_APP_ID</span><span class=o>=</span>你的Application ID
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>ALGOLIA_APP_ID</span><span class=o>=</span>你的Application ID
 <span class=nv>ALGOLIA_INDEX_NAME</span><span class=o>=</span>你的索引名字
 <span class=nv>ALGOLIA_INDEX_FILE</span><span class=o>=</span>public/index.json
 <span class=nv>ALGOLIA_ADMIN_KEY</span><span class=o>=</span>你的Admin API Key
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>上传索引的命令</li>
 </ul>
 <p>你可以本地执行 <code>npm run algolia</code> 查看运行效果。后续就是把下面的命令加到你的自动部署脚本即可：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm run algolia // 在hugo命令后面执行
-</code></pre></div><p>如果出现问题，试下以下命令：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm install
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm run algolia // 在hugo命令后面执行
+</code></pre></td></tr></table>
+</div>
+</div><p>如果出现问题，试下以下命令：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm install
 npm run algolia // 在hugo命令后面执行
-</code></pre></div><h3 id=修改自动部署脚本>修改自动部署脚本</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=修改自动部署脚本>修改自动部署脚本</h3>
 <p>自动部署脚本改成这样：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
 </span><span class=cp></span>
 <span class=nb>echo</span> -e <span class=s2>&#34;\033[0;32mDeploying updates to gitee...\033[0m&#34;</span>
 
@@ -130,7 +211,9 @@ git push origin master --force
 
 <span class=c1># Come Back up to the Project Root</span>
 <span class=nb>cd</span> ..
-</code></pre></div><p>至此，如果你运行 <code>npm run algolia</code> 没有报错的话，就成功了。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>至此，如果你运行 <code>npm run algolia</code> 没有报错的话，就成功了。</p>
 <h2 id=参考链接>参考链接</h2>
 <ul>
 <li><a class=link href=https://edward852.github.io/post/hugo%E6%B7%BB%E5%8A%A0algolia%E6%90%9C%E7%B4%A2%E6%94%AF%E6%8C%81/ target=_blank rel=noopener>1.Hugo添加Algolia搜索支持</a></li>
@@ -160,7 +243,7 @@ git push origin master --force
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

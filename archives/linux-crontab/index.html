@@ -1,14 +1,14 @@
 <!doctype html><html lang=zh-cn>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="查看定时任务 crontab -l 编辑定时任务 crontab -e 使用实例 每天，每月，每年 定时启动: 每五分钟执行 */5 * * * * 每小时执行 0 * * * * 每天执行 0 0 * * * 每周执行 0 0 *"><title>linux利用crontab设置定时任务</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="查看定时任务 1 crontab -l 编辑定时任务 1 crontab -e 使用实例 每天，每月，每年 定时启动: 1 2 3 4 5 6 7 8 9 10 11 每五分钟执行 */5 * * * * 每小时执行 0 * * * * 每天执"><title>linux利用crontab设置定时任务</title>
 <link rel=canonical href=/archives/linux-crontab/>
 <link rel=stylesheet href=/scss/style.min.16cf5e09a1fbb893e397056354f42a6c4e97f90e600dfa8128d1a659e6a17083.css><meta property="og:title" content="linux利用crontab设置定时任务">
-<meta property="og:description" content="查看定时任务 crontab -l 编辑定时任务 crontab -e 使用实例 每天，每月，每年 定时启动: 每五分钟执行 */5 * * * * 每小时执行 0 * * * * 每天执行 0 0 * * * 每周执行 0 0 *">
+<meta property="og:description" content="查看定时任务 1 crontab -l 编辑定时任务 1 crontab -e 使用实例 每天，每月，每年 定时启动: 1 2 3 4 5 6 7 8 9 10 11 每五分钟执行 */5 * * * * 每小时执行 0 * * * * 每天执">
 <meta property="og:url" content="/archives/linux-crontab/">
 <meta property="og:site_name" content="Bore's Notes">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="linux"><meta property="article:published_time" content="2020-08-10T18:52:25+08:00"><meta property="article:modified_time" content="2020-08-10T18:52:25+08:00">
 <meta name=twitter:title content="linux利用crontab设置定时任务">
-<meta name=twitter:description content="查看定时任务 crontab -l 编辑定时任务 crontab -e 使用实例 每天，每月，每年 定时启动: 每五分钟执行 */5 * * * * 每小时执行 0 * * * * 每天执行 0 0 * * * 每周执行 0 0 *">
+<meta name=twitter:description content="查看定时任务 1 crontab -l 编辑定时任务 1 crontab -e 使用实例 每天，每月，每年 定时启动: 1 2 3 4 5 6 7 8 9 10 11 每五分钟执行 */5 * * * * 每小时执行 0 * * * * 每天执">
 <link rel="shortcut icon" href=/img/favicon.png>
 </head>
 <body class="article-page has-toc">
@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-1196 字
+1288 字
 </time>
 </div>
 </footer>
@@ -46,12 +46,41 @@ extended">
 </header>
 <section class=article-content>
 <h2 id=查看定时任务>查看定时任务</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -l
-</code></pre></div><h2 id=编辑定时任务>编辑定时任务</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
-</code></pre></div><h2 id=使用实例>使用实例</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -l
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=编辑定时任务>编辑定时任务</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=使用实例>使用实例</h2>
 <p>每天，每月，每年 定时启动:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=nx>每五分钟执行</span>  <span class=o>*</span><span class=err>/5 * * * *</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=nx>每五分钟执行</span>  <span class=o>*</span><span class=err>/5 * * * *</span>
 
 <span class=nx>每小时执行</span>     <span class=mi>0</span> <span class=o>*</span> <span class=o>*</span> <span class=o>*</span> <span class=o>*</span>
 
@@ -62,8 +91,93 @@ extended">
 <span class=nx>每月执行</span>        <span class=mi>0</span> <span class=mi>0</span> <span class=mi>1</span> <span class=o>*</span> <span class=o>*</span>
 
 <span class=nx>每年执行</span>       <span class=mi>0</span> <span class=mi>0</span> <span class=mi>1</span> <span class=mi>1</span> <span class=o>*</span>
-</code></pre></div><p>crontab时间举例：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=err>#</span> <span class=nx>每天早上6点</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>crontab时间举例：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span><span class=lnt>41
+</span><span class=lnt>42
+</span><span class=lnt>43
+</span><span class=lnt>44
+</span><span class=lnt>45
+</span><span class=lnt>46
+</span><span class=lnt>47
+</span><span class=lnt>48
+</span><span class=lnt>49
+</span><span class=lnt>50
+</span><span class=lnt>51
+</span><span class=lnt>52
+</span><span class=lnt>53
+</span><span class=lnt>54
+</span><span class=lnt>55
+</span><span class=lnt>56
+</span><span class=lnt>57
+</span><span class=lnt>58
+</span><span class=lnt>59
+</span><span class=lnt>60
+</span><span class=lnt>61
+</span><span class=lnt>62
+</span><span class=lnt>63
+</span><span class=lnt>64
+</span><span class=lnt>65
+</span><span class=lnt>66
+</span><span class=lnt>67
+</span><span class=lnt>68
+</span><span class=lnt>69
+</span><span class=lnt>70
+</span><span class=lnt>71
+</span><span class=lnt>72
+</span><span class=lnt>73
+</span><span class=lnt>74
+</span><span class=lnt>75
+</span><span class=lnt>76
+</span><span class=lnt>77
+</span><span class=lnt>78
+</span><span class=lnt>79
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-js data-lang=js><span class=err>#</span> <span class=nx>每天早上6点</span> 
 <span class=mi>0</span> <span class=mi>6</span> <span class=o>*</span> <span class=o>*</span> <span class=o>*</span> <span class=nx>echo</span> <span class=s2>&#34;Good morning.&#34;</span> <span class=o>&gt;&gt;</span> <span class=err>/tmp/test.txt //注意单纯echo，从屏幕上看不到任何输出，因为cron把任何输出都email到root的信箱了。</span>
 
 <span class=err>#</span> <span class=nx>每两个小时</span> 
@@ -142,7 +256,9 @@ extended">
 
 <span class=err>#</span> <span class=nx>晚上11点到早上7点之间</span><span class=err>，</span><span class=nx>每隔一小时重启smb</span>
 <span class=mi>0</span> <span class=mi>23</span><span class=o>-</span><span class=mi>7</span> <span class=o>*</span> <span class=o>*</span> <span class=o>*</span> <span class=err>/etc/init.d/smb restart</span>
-</code></pre></div><h2 id=参考链接>参考链接</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=参考链接>参考链接</h2>
 <ul>
 <li><a class=link href=https://blog.csdn.net/qq_22823581/article/details/80783835 target=_blank rel=noopener>1.Linux之crontab定时任务</a></li>
 <li><a class=link href=https://linuxtools-rst.readthedocs.io/zh_CN/latest/tool/crontab.html target=_blank rel=noopener>2.crontab 定时任务</a></li>
@@ -171,7 +287,7 @@ extended">
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

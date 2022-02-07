@@ -1,14 +1,14 @@
 <!doctype html><html lang=zh-cn>
 <head><meta charset=utf-8>
-<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="安装vsftpd sudo yum install vsftpd -y 安装软件包后，启动vsftpd，并使其能够在引导时自动启动： sudo systemctl start vsftpd sudo systemctl enable vsftpd 配置vsftpd vi /etc/vsftpd/vsftpd.conf 要仅允许某些用户登"><title>centos8搭建ftp服务器</title>
+<meta name=viewport content="width=device-width,initial-scale=1"><meta name=description content="安装vsftpd 1 sudo yum install vsftpd -y 安装软件包后，启动vsftpd，并使其能够在引导时自动启动： 1 2 sudo systemctl start vsftpd sudo systemctl enable vsftpd 配置vsftpd 1 vi /etc/vsftpd/vsftpd.conf 要仅允许某"><title>centos8搭建ftp服务器</title>
 <link rel=canonical href=/archives/centos8-enable-ftp/>
 <link rel=stylesheet href=/scss/style.min.16cf5e09a1fbb893e397056354f42a6c4e97f90e600dfa8128d1a659e6a17083.css><meta property="og:title" content="centos8搭建ftp服务器">
-<meta property="og:description" content="安装vsftpd sudo yum install vsftpd -y 安装软件包后，启动vsftpd，并使其能够在引导时自动启动： sudo systemctl start vsftpd sudo systemctl enable vsftpd 配置vsftpd vi /etc/vsftpd/vsftpd.conf 要仅允许某些用户登">
+<meta property="og:description" content="安装vsftpd 1 sudo yum install vsftpd -y 安装软件包后，启动vsftpd，并使其能够在引导时自动启动： 1 2 sudo systemctl start vsftpd sudo systemctl enable vsftpd 配置vsftpd 1 vi /etc/vsftpd/vsftpd.conf 要仅允许某">
 <meta property="og:url" content="/archives/centos8-enable-ftp/">
 <meta property="og:site_name" content="Bore's Notes">
 <meta property="og:type" content="article"><meta property="article:section" content="Post"><meta property="article:tag" content="服务器"><meta property="article:published_time" content="2020-06-06T19:34:25+08:00"><meta property="article:modified_time" content="2020-06-06T19:34:25+08:00">
 <meta name=twitter:title content="centos8搭建ftp服务器">
-<meta name=twitter:description content="安装vsftpd sudo yum install vsftpd -y 安装软件包后，启动vsftpd，并使其能够在引导时自动启动： sudo systemctl start vsftpd sudo systemctl enable vsftpd 配置vsftpd vi /etc/vsftpd/vsftpd.conf 要仅允许某些用户登">
+<meta name=twitter:description content="安装vsftpd 1 sudo yum install vsftpd -y 安装软件包后，启动vsftpd，并使其能够在引导时自动启动： 1 2 sudo systemctl start vsftpd sudo systemctl enable vsftpd 配置vsftpd 1 vi /etc/vsftpd/vsftpd.conf 要仅允许某">
 <link rel="shortcut icon" href=/img/favicon.png>
 </head>
 <body class="article-page has-toc">
@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-605 字
+654 字
 </time>
 </div>
 </footer>
@@ -46,18 +46,84 @@ extended">
 </header>
 <section class=article-content>
 <h2 id=安装vsftpd>安装vsftpd</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo yum install vsftpd -y
-</code></pre></div><p>安装软件包后，启动vsftpd，并使其能够在引导时自动启动：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl start vsftpd
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo yum install vsftpd -y
+</code></pre></td></tr></table>
+</div>
+</div><p>安装软件包后，启动vsftpd，并使其能够在引导时自动启动：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl start vsftpd
 sudo systemctl <span class=nb>enable</span> vsftpd
-</code></pre></div><h2 id=配置vsftpd>配置vsftpd</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/vsftpd/vsftpd.conf
-</code></pre></div><p>要仅允许某些用户登录FTP服务器，需要在<code>userlist_enable=YES</code>下面，加上：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>userlist_file</span><span class=o>=</span>/etc/vsftpd/user_list
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=配置vsftpd>配置vsftpd</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/vsftpd/vsftpd.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>要仅允许某些用户登录FTP服务器，需要在<code>userlist_enable=YES</code>下面，加上：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>userlist_file</span><span class=o>=</span>/etc/vsftpd/user_list
 <span class=nv>userlist_deny</span><span class=o>=</span>NO
-</code></pre></div><p>启用此选项后，您需要通过将用户名添加到<code>/etc/vsftpd/user_list</code>文件（每行一个用户）来明确指定哪些用户可以登录。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>启用此选项后，您需要通过将用户名添加到<code>/etc/vsftpd/user_list</code>文件（每行一个用户）来明确指定哪些用户可以登录。</p>
 <p>完成编辑后，vsftpd配置文件应如下所示：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>anonymous_enable</span><span class=o>=</span>NO
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>anonymous_enable</span><span class=o>=</span>NO
 <span class=nv>local_enable</span><span class=o>=</span>YES
 <span class=nv>write_enable</span><span class=o>=</span>YES
 <span class=nv>local_umask</span><span class=o>=</span><span class=m>022</span>
@@ -89,31 +155,92 @@ sudo systemctl <span class=nb>enable</span> vsftpd
 <span class=nv>userlist_enable</span><span class=o>=</span>YES
 <span class=nv>userlist_file</span><span class=o>=</span>/etc/vsftpd/user_list
 <span class=nv>userlist_deny</span><span class=o>=</span>NO
-</code></pre></div><h2 id=重启vsftpd服务>重启vsftpd服务</h2>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=重启vsftpd服务>重启vsftpd服务</h2>
 <p>保存文件并重新启动vsftpd服务，以使更改生效：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart vsftpd
-</code></pre></div><h2 id=设置防火墙>设置防火墙</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart vsftpd
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=设置防火墙>设置防火墙</h2>
 <p>最直接方法关闭防火墙。</p>
 <h2 id=创建ftp用户>创建FTP用户</h2>
 <p>创建一个新用户，名为admin:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo adduser admin
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo adduser admin
 sudo passwd admin
-</code></pre></div><p>将用户添加到允许的FTP用户列表中：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>echo</span> <span class=s2>&#34;admin&#34;</span> <span class=p>|</span> sudo tee -a /etc/vsftpd/user_list
-</code></pre></div><p>设置正确的权限：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo chmod <span class=m>750</span> /home/admin
+</code></pre></td></tr></table>
+</div>
+</div><p>将用户添加到允许的FTP用户列表中：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>echo</span> <span class=s2>&#34;admin&#34;</span> <span class=p>|</span> sudo tee -a /etc/vsftpd/user_list
+</code></pre></td></tr></table>
+</div>
+</div><p>设置正确的权限：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo chmod <span class=m>750</span> /home/admin
 sudo chown -R admin: /home/admin
-</code></pre></div><p>如果遇到文件无法下载，可能需要更改文件所属用户组，例如：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>chown admin 文件名
-</code></pre></div><h2 id=修改vsftpd的默认根目录>修改vsftpd的默认根目录</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/vsftpd/vsftpd.conf
-</code></pre></div><p>加入如下几行：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>local_root</span><span class=o>=</span>/var/www/html
+</code></pre></td></tr></table>
+</div>
+</div><p>如果遇到文件无法下载，可能需要更改文件所属用户组，例如：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>chown admin 文件名
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=修改vsftpd的默认根目录>修改vsftpd的默认根目录</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/vsftpd/vsftpd.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>加入如下几行：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>local_root</span><span class=o>=</span>/var/www/html
 <span class=nv>anon_root</span><span class=o>=</span>/var/www/html
-</code></pre></div><p><strong>注</strong>：<code>local_root</code> 针对系统用户；<code>anon_root</code> 针对匿名用户，如果禁止匿名登录，不用加此项。网上说还要加上<code>chroot_local_user=YES</code>，加上此项后根本无法登陆。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p><strong>注</strong>：<code>local_root</code> 针对系统用户；<code>anon_root</code> 针对匿名用户，如果禁止匿名登录，不用加此项。网上说还要加上<code>chroot_local_user=YES</code>，加上此项后根本无法登陆。</p>
 <p>重新启动服务：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart vsftpd
-</code></pre></div><p>任何一个用户ftp登录到这个服务器上都会chroot到/var/www/html目录下。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart vsftpd
+</code></pre></td></tr></table>
+</div>
+</div><p>任何一个用户ftp登录到这个服务器上都会chroot到/var/www/html目录下。</p>
 <h2 id=参考链接>参考链接</h2>
 <ul>
 <li>
@@ -146,7 +273,7 @@ sudo chown -R admin: /home/admin
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-2113 字
+1971 字
 </time>
 </div>
 </footer>
@@ -50,45 +50,106 @@ extended">
 <p>本地需要安装 <a class=link href=https://git-scm.com/ target=_blank rel=noopener>Git</a> （ Latest source Release 2.31.1）和 <a class=link href=https://nodejs.org/en/ target=_blank rel=noopener>Node.js</a>（14.16.0 LTS），安装过程略。</p>
 <p>安装完git后还要配置环境变量：
 右键我的电脑 –> 属性，然后点击高级系统设置 –> 环境变量 –> 选择用户变量或系统变量中的Path,点击编辑；找到Git安装目录,添加以下地址:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>D:<span class=se>\P</span>rogram Files<span class=se>\G</span>it<span class=se>\b</span>in
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>D:<span class=se>\P</span>rogram Files<span class=se>\G</span>it<span class=se>\b</span>in
 D:<span class=se>\P</span>rogram Files<span class=se>\G</span>it<span class=se>\m</span>ingw64<span class=se>\l</span>ibexec<span class=se>\g</span>it-core
 D:<span class=se>\P</span>rogram Files<span class=se>\G</span>it<span class=se>\m</span>ingw64<span class=se>\b</span>in
-</code></pre></div><h3 id=配置ssh-公钥>配置SSH 公钥</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=配置ssh-公钥>配置SSH 公钥</h3>
 <p>Windows 上安装 <a class=link href=https://git-for-windows.github.io/ target=_blank rel=noopener>Git for Windows</a> 之后在开始菜单里打开 Git Bash 输入：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git config --global user.name <span class=s2>&#34;你的用户名&#34;</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git config --global user.name <span class=s2>&#34;你的用户名&#34;</span>
 git config --global user.email <span class=s2>&#34;你的电子邮箱&#34;</span>
-</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> ~
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> ~
 mkdir .ssh
 <span class=nb>cd</span> .ssh
 ssh-keygen -t rsa
-</code></pre></div><p>在系统当前用户文件夹下生成了私钥 <code>id_rsa</code> 和公钥 <code>id_rsa.pub</code>。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>在系统当前用户文件夹下生成了私钥 <code>id_rsa</code> 和公钥 <code>id_rsa.pub</code>。</p>
 <h3 id=初始化-hexo>初始化 Hexo</h3>
 <p>在电脑任意目录新建一个文件夹 <code>hexo</code>，进入文件夹，在空白处点击右键选择 Git Bash，输入：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm install hexo-cli -g
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>npm install hexo-cli -g
 hexo init blog
 <span class=nb>cd</span> blog
 npm install
 hexo server
-</code></pre></div><p>这样便在本地初始化了 Hexo 文件夹，然后输入：
+</code></pre></td></tr></table>
+</div>
+</div><p>这样便在本地初始化了 Hexo 文件夹，然后输入：
 <code>hexo new post "第一篇文章"</code>
 即可新建一篇文章，用文本编辑器打开 <code>hexo/source/_post/第一篇文章.md</code> 可以快速开始写作。其余使用方法和配置按照 Hexo 官网操作即可。推荐编辑器**<a class=link href=https://github.com/zhuzhuyule/HexoEditor target=_blank rel=noopener>hexo-editor</a>**</p>
 <p>2020/4/27更新: hexo-editor速度太慢，改用<a class=link href=https://www.typora.io target=_blank rel=noopener>Typora</a></p>
 <h3 id=修改-deploy-参数>修改 deploy 参数</h3>
 <p>打开位于 <code>hexo</code> 文件夹下的 <code>_config.yml</code>，修改 deploy 参数：</p>
 <h4 id=单线部署>单线部署</h4>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>deploy:
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>deploy:
  type: git
  repo: git@blog.yizhilee.com:hexo.git
  branch: master
-</code></pre></div><h4 id=多线部署>多线部署</h4>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>deploy</span><span class=p>:</span><span class=w>
+</code></pre></td></tr></table>
+</div>
+</div><h4 id=多线部署>多线部署</h4>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>deploy</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>type</span><span class=p>:</span><span class=w> </span><span class=l>git</span><span class=w>
 </span><span class=w>  </span><span class=nt>repo</span><span class=p>:</span><span class=w>
 </span><span class=w>    </span><span class=nt>github</span><span class=p>:</span><span class=w> </span><span class=l>git@github.com:iwyang/iwyang.github.io.git</span><span class=w>
 </span><span class=w>    </span><span class=nt>coding</span><span class=p>:</span><span class=w> </span><span class=l>git@e.coding.net:iwyang/iwyang.coding.me.git</span><span class=w>
 </span><span class=w>    </span><span class=nt>gitee</span><span class=p>:</span><span class=w> </span><span class=l>git@gitee.com:iwyang/iwyang.git</span><span class=w>
 </span><span class=w>  </span><span class=nt>branch</span><span class=p>:</span><span class=w> </span><span class=l>master</span><span class=w>
-</span></code></pre></div><h2 id=部署到-github>部署到 GitHub</h2>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=部署到-github>部署到 GitHub</h2>
 <p>比部署到服务器要简单，这里着重讲下<strong>绑定域名</strong>。</p>
 <h3 id=添加解析记录>添加解析记录</h3>
 <p>添加cname记录指向Github Pages</p>
@@ -119,9 +180,17 @@ hexo server
 </blockquote>
 <p>**其实这里有个技巧，我们可以将需要上传部署到Github的文件都放在<code>source</code>文件夹里，例如<code>CNAME</code>文件、<code>favicon.ico</code>、或者其他的图片等等，这样在执行<code>hexo d</code>这个命令之后，这些文件就不会被删除了。 **</p>
 <p>然后在<strong>站点配置文件</strong><code>_config.yml</code>中添加<code>skip_render</code>配置：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>skip_render</span><span class=p>:</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>skip_render</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span>- <span class=l>CNAME</span><span class=w>
-</span></code></pre></div><h2 id=部署到-coding>部署到 coding</h2>
+</span></code></pre></td></tr></table>
+</div>
+</div><h2 id=部署到-coding>部署到 coding</h2>
 <p>操作和部署到github大同小异，注意以下几点：</p>
 <ul>
 <li>项目地址按iwyang.coding.me来写，建议勾选“启用readme.md初始化项目”</li>
@@ -144,11 +213,21 @@ hexo server
 <p>答：如果你想你的 pages 首页访问地址不带二级目录，如ipvb.gitee.io，你需要建立一个与自己个性地址同名的仓库，如 <a class=link href=https://gitee.com/ipvb target=_blank rel=noopener>https://gitee.com/ipvb</a> 这个用户，想要创建一个自己的站点，但不想以子目录的方式访问，想以ipvb.gitee.io直接访问，那么他就可以创建一个名字为ipvb的仓库 <a class=link href=https://gitee.com/ipvb/ipvb target=_blank rel=noopener>https://gitee.com/ipvb/ipvb</a> 部署完成后，就可以以 <a class=link href=https://ipvb.gitee.io target=_blank rel=noopener>https://ipvb.gitee.io</a> 进行访问了。</p>
 <h2 id=自动部署脚本>自动部署脚本</h2>
 <p>在根目录新建<code>deploy.sh</code>，输入以下内容：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
 </span><span class=cp></span><span class=nb>echo</span> -e <span class=s2>&#34;\033[0;32mDeploying updates to gitee...\033[0m&#34;</span>
 hexo clean
 hexo g -d
-</code></pre></div><p>有时候可能需要多次运行脚本才能提交成功，这时不妨手动输入命令。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>有时候可能需要多次运行脚本才能提交成功，这时不妨手动输入命令。</p>
 <h2 id=全站-cdn-加速>全站 CDN 加速</h2>
 <p>使用Cloudflare，encryption mode选 Full，在Edge Certificates选项卡开启Always Use Https</p>
 <h2 id=参考链接>参考链接</h2>
@@ -189,7 +268,7 @@ hexo g -d
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

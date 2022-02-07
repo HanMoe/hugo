@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-2281 字
+2327 字
 </time>
 </div>
 </footer>
@@ -50,13 +50,31 @@ extended">
 <h2 id=配置actions_deploy_key>配置<code>ACTIONS_DEPLOY_KEY</code></h2>
 <h3 id=生成公钥>生成公钥</h3>
 <p>Windows 上安装 <a class=link href=https://git-for-windows.github.io/ target=_blank rel=noopener>Git for Windows</a> 之后在开始菜单里打开 Git Bash 输入：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git config --global user.name <span class=s2>&#34;你的用户名&#34;</span>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git config --global user.name <span class=s2>&#34;你的用户名&#34;</span>
 git config --global user.email <span class=s2>&#34;你的电子邮箱&#34;</span>
-</code></pre></div><div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> ~
+</code></pre></td></tr></table>
+</div>
+</div><div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>cd</span> ~
 mkdir .ssh
 <span class=nb>cd</span> .ssh
 ssh-keygen -t rsa
-</code></pre></div><p>在系统当前用户文件夹下生成了私钥 <code>id_rsa</code> 和公钥 <code>id_rsa.pub</code>。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>在系统当前用户文件夹下生成了私钥 <code>id_rsa</code> 和公钥 <code>id_rsa.pub</code>。</p>
 <h3 id=上传id_rsapub>上传id_rsa.pub</h3>
 <p>点击博客仓库的Settings->Deploy keys->add deploy key，Title填写<code>ACTIONS_DEPLOY_KEY</code>，Key填写<code>id_rsa.pub</code>文件的内容。</p>
 <h3 id=上传id_rsa>上传id_rsa</h3>
@@ -65,41 +83,145 @@ ssh-keygen -t rsa
 <p>这里在<code>Github actions</code>里利用<code>FTP-Deploy-Action</code>上传文件到服务器。项目地址：<a class=link href=https://github.com/SamKirkland target=_blank rel=noopener>SamKirkland</a>/<a class=link href=https://github.com/SamKirkland/FTP-Deploy-Action target=_blank rel=noopener>FTP-Deploy-Action</a></p>
 <p>首先是搭建ftp服务器。</p>
 <h3 id=安装vsftpd>安装vsftpd</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo yum install vsftpd -y
-</code></pre></div><p>安装软件包后，启动vsftpd，并使其能够在引导时自动启动：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl start vsftpd
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo yum install vsftpd -y
+</code></pre></td></tr></table>
+</div>
+</div><p>安装软件包后，启动vsftpd，并使其能够在引导时自动启动：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl start vsftpd
 sudo systemctl <span class=nb>enable</span> vsftpd
-</code></pre></div><h3 id=配置vsftpd>配置vsftpd</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/vsftpd/vsftpd.conf
-</code></pre></div><p>在<code>userlist_enable=YES</code>下面，加上：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>userlist_file</span><span class=o>=</span>/etc/vsftpd/user_list
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=配置vsftpd>配置vsftpd</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>vi /etc/vsftpd/vsftpd.conf
+</code></pre></td></tr></table>
+</div>
+</div><p>在<code>userlist_enable=YES</code>下面，加上：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nv>userlist_file</span><span class=o>=</span>/etc/vsftpd/user_list
 <span class=nv>userlist_deny</span><span class=o>=</span>NO
-</code></pre></div><h3 id=创建ftp用户>创建FTP用户</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=创建ftp用户>创建FTP用户</h3>
 <ul>
 <li>创建一个新用户，名为git:</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo adduser git
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo adduser git
 sudo passwd git
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>将用户添加到允许的FTP用户列表中：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>echo</span> <span class=s2>&#34;git&#34;</span> <span class=p>|</span> sudo tee -a /etc/vsftpd/user_list
-</code></pre></div><ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=nb>echo</span> <span class=s2>&#34;git&#34;</span> <span class=p>|</span> sudo tee -a /etc/vsftpd/user_list
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>设置正确的权限</li>
 </ul>
 <p>为了使ftp用户可以上传网站文件到相应目录：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo chmod <span class=m>755</span> /var/www/hexo
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo chmod <span class=m>755</span> /var/www/hexo
 sudo chown -R git: /var/www/hexo
-</code></pre></div><ul>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>重启vsftpd服务。</li>
 </ul>
 <p>保存文件并重新启动vsftpd服务，以使更改生效：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart vsftpd
-</code></pre></div><h2 id=配置ftp_mirror_password>配置<code>FTP_MIRROR_PASSWORD</code></h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>sudo systemctl restart vsftpd
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=配置ftp_mirror_password>配置<code>FTP_MIRROR_PASSWORD</code></h2>
 <p>点击博客仓库的Settings->Secrets->Add a new secret，Name填写<code>FTP_MIRROR_PASSWORD</code>，Value填写用户密码。</p>
 <h2 id=配置-github-actions>配置 Github actions</h2>
 <p>在博客根目录新建<code>.github/workflows/gh_pages.yml</code>文件。代码如下：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>GitHub Page Deploy</span><span class=w>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt> 1
+</span><span class=lnt> 2
+</span><span class=lnt> 3
+</span><span class=lnt> 4
+</span><span class=lnt> 5
+</span><span class=lnt> 6
+</span><span class=lnt> 7
+</span><span class=lnt> 8
+</span><span class=lnt> 9
+</span><span class=lnt>10
+</span><span class=lnt>11
+</span><span class=lnt>12
+</span><span class=lnt>13
+</span><span class=lnt>14
+</span><span class=lnt>15
+</span><span class=lnt>16
+</span><span class=lnt>17
+</span><span class=lnt>18
+</span><span class=lnt>19
+</span><span class=lnt>20
+</span><span class=lnt>21
+</span><span class=lnt>22
+</span><span class=lnt>23
+</span><span class=lnt>24
+</span><span class=lnt>25
+</span><span class=lnt>26
+</span><span class=lnt>27
+</span><span class=lnt>28
+</span><span class=lnt>29
+</span><span class=lnt>30
+</span><span class=lnt>31
+</span><span class=lnt>32
+</span><span class=lnt>33
+</span><span class=lnt>34
+</span><span class=lnt>35
+</span><span class=lnt>36
+</span><span class=lnt>37
+</span><span class=lnt>38
+</span><span class=lnt>39
+</span><span class=lnt>40
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-yaml data-lang=yaml><span class=nt>name</span><span class=p>:</span><span class=w> </span><span class=l>GitHub Page Deploy</span><span class=w>
 </span><span class=w>
 </span><span class=w></span><span class=nt>on</span><span class=p>:</span><span class=w>
 </span><span class=w>  </span><span class=nt>push</span><span class=p>:</span><span class=w>
@@ -139,16 +261,43 @@ sudo chown -R git: /var/www/hexo
 </span><span class=w>          </span><span class=nt>password</span><span class=p>:</span><span class=w> </span><span class=l>${{ secrets.FTP_MIRROR_PASSWORD }}</span><span class=w>
 </span><span class=w>          </span><span class=nt>local-dir</span><span class=p>:</span><span class=w> </span><span class=l>./public/</span><span class=w>
 </span><span class=w>          </span><span class=nt>server-dir</span><span class=p>:</span><span class=w> </span><span class=l>/var/www/hexo/</span><span class=w>
-</span></code></pre></div><h3 id=提交源码>提交源码</h3>
+</span></code></pre></td></tr></table>
+</div>
+</div><h3 id=提交源码>提交源码</h3>
 <p>初始化git，新建并切换到<code>develop</code>分支，将源码提交到<code>develop</code>分支。稍等片刻，github action会自动部署blog到<code>master</code>分支。</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git init
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git init
 git checkout -b develop
 git remote add origin git@github.com:iwyang/iwyang.github.io.git
 git add .
 git commit -m <span class=s2>&#34;备份源码&#34;</span>
 git push --force origin develop
-</code></pre></div><h3 id=最终部署脚本>最终部署脚本</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=最终部署脚本>最终部署脚本</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span><span class=lnt>4
+</span><span class=lnt>5
+</span><span class=lnt>6
+</span><span class=lnt>7
+</span><span class=lnt>8
+</span><span class=lnt>9
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash><span class=cp>#!/bin/bash
 </span><span class=cp></span>
 <span class=nb>echo</span> -e <span class=s2>&#34;\033[0;32mDeploying updates to gitee...\033[0m&#34;</span>
 
@@ -157,59 +306,163 @@ git config --global core.autocrlf <span class=nb>false</span>
 git add .
 git commit -m <span class=s2>&#34;site backup&#34;</span>
 git push origin develop --force
-</code></pre></div><h2 id=本地操作>本地操作</h2>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone -b develop git@github.com:iwyang/iwyang.github.io.git blog --recursive
-</code></pre></div><p>因为使用<code>Submodule</code>管理主题，所以最后要加上 <code>--recursive</code>，因为使用 git clone 命令默认不会拉取项目中的子模块，你会发现主题文件是空的。（另外一种方法：<code>git submodule init && git submodule update</code>）</p>
+</code></pre></td></tr></table>
+</div>
+</div><h2 id=本地操作>本地操作</h2>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone -b develop git@github.com:iwyang/iwyang.github.io.git blog --recursive
+</code></pre></td></tr></table>
+</div>
+</div><p>因为使用<code>Submodule</code>管理主题，所以最后要加上 <code>--recursive</code>，因为使用 git clone 命令默认不会拉取项目中的子模块，你会发现主题文件是空的。（另外一种方法：<code>git submodule init && git submodule update</code>）</p>
 <h3 id=同步更新源文件>同步更新源文件</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git pull
-</code></pre></div><h3 id=同步主题文件>同步主题文件</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --remote
-</code></pre></div><p>运行此命令后， Git 将会自动进入子模块然后抓取并更新，更新后重新提交一遍，子模块新的跟踪信息便也会记录到仓库中。这样就保证仓库主题是最新的。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git pull
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=同步主题文件>同步主题文件</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --remote
+</code></pre></td></tr></table>
+</div>
+</div><p>运行此命令后， Git 将会自动进入子模块然后抓取并更新，更新后重新提交一遍，子模块新的跟踪信息便也会记录到仓库中。这样就保证仓库主题是最新的。</p>
 <h2 id=服务器通过git拉取更新>服务器通过git拉取更新</h2>
 <p>2021.8.15 已经不用此方法，现在直接在<code>Github actions</code>利用<code>FTP-Deploy-Action</code>上传文件到服务器。</p>
 <h3 id=克隆仓库>克隆仓库</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>rm -rf /var/www/hexo
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>rm -rf /var/www/hexo
 git clone git@github.com:iwyang/iwyang.github.io.git /var/www/hexo
-</code></pre></div><h3 id=出现问题>出现问题</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=出现问题>出现问题</h3>
 <p>执行上一步可能会出现问题：<code> Permission denied (publickey). Could not read from remote repository</code>。</p>
 <p>解决方法：</p>
 <h4 id=服务器生成ssh-key>服务器生成ssh key</h4>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install rsync -y
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>yum install rsync -y
 ssh-keygen -t rsa -C <span class=s2>&#34;455343442@qq.com&#34;</span>
-</code></pre></div><p>一路回车即可，会生成你的ssh key。然后再终端下执行命令：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh -v git@github.com
-</code></pre></div><p>这时会报错，最后两句是：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>No more authentication methods to try.  
+</code></pre></td></tr></table>
+</div>
+</div><p>一路回车即可，会生成你的ssh key。然后再终端下执行命令：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh -v git@github.com
+</code></pre></td></tr></table>
+</div>
+</div><p>这时会报错，最后两句是：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>No more authentication methods to try.  
 　　Permission denied <span class=o>(</span>publickey<span class=o>)</span>.
-</code></pre></div><p>在终端再执行以下命令：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-agent -s 
-</code></pre></div><p>接着在执行:</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-add ~/.ssh/id_rsa
-</code></pre></div><p>出现问题：<code>Could not open a connection to your authentication agent.</code></p>
+</code></pre></td></tr></table>
+</div>
+</div><p>在终端再执行以下命令：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-agent -s 
+</code></pre></td></tr></table>
+</div>
+</div><p>接着在执行:</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh-add ~/.ssh/id_rsa
+</code></pre></td></tr></table>
+</div>
+</div><p>出现问题：<code>Could not open a connection to your authentication agent.</code></p>
 <p>解决方法：使用：<code>ssh-agent bash</code> 命令，然后再次使用<code>ssh-add ~/.ssh/id_rsa_name</code>这个命令就没问题了。(<strong>注意</strong>：Identity added: &mldr;这是ssh key文件路径的信息，如<code>/.ssh/id_rsa</code>)</p>
 <h4 id=配置github>配置github</h4>
 <p>打开你刚刚生成的<code>id_rsa.pub</code>，将里面的内容复制，进入你的github账号，在settings下，SSH and GPG keys下new SSH key，然后将id_rsa.pub里的内容复制到Key中，完成后Add SSH Key。</p>
 <h4 id=验证key>验证Key</h4>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh -T git@github.com 
-</code></pre></div><h3 id=设置crontab定时任务>设置crontab定时任务：</h3>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>ssh -T git@github.com 
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=设置crontab定时任务>设置crontab定时任务：</h3>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>crontab -e
 */5 * * * * git -C /var/www/hexo pull
-</code></pre></div><p>这样只要提交源码给github，<code>github action</code>就会帮你部署博客到<code>github page</code>，服务器通过<code>git pull</code>定时拉取更新。换台电脑不用再搭建环境，直接在gtihub新建或者修改文章，剩下的工作就交给<code>github action</code>。注意回本地电脑先<code>git pull</code>拉取更新，再提交源码。</p>
+</code></pre></td></tr></table>
+</div>
+</div><p>这样只要提交源码给github，<code>github action</code>就会帮你部署博客到<code>github page</code>，服务器通过<code>git pull</code>定时拉取更新。换台电脑不用再搭建环境，直接在gtihub新建或者修改文章，剩下的工作就交给<code>github action</code>。注意回本地电脑先<code>git pull</code>拉取更新，再提交源码。</p>
 <p><strong>注意：好像先要从源码仓库clone一份源码到本地，才能利用<code>git pull</code>拉取github已有的更新。只有先拉取github已有的更新，再在本地提交源码，github上的更新才不会被删除</strong>。</p>
 <h2 id=附使用git-submodule管理hugo主题>附：使用Git Submodule管理Hugo主题</h2>
 <ul>
 <li>如果克隆库的时候要初始化子模块，请加上 <code>--recursive</code> 参数，如：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone -b develop git@github.com:iwyang/iwyang.github.io.git blog --recursive
-</code></pre></div><ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git clone -b develop git@github.com:iwyang/iwyang.github.io.git blog --recursive
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>如果已经克隆了主库但没初始化子模块，则用：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --init --recursive
-</code></pre></div><ul>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --init --recursive
+</code></pre></td></tr></table>
+</div>
+</div><ul>
 <li>如果已经克隆并初始化子模块，而需要从子模块的源更新这个子模块，则：</li>
 </ul>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --recursive --remote
-</code></pre></div><p>更新之后主库的 git 差异中会显示新的 SHA 码，把这个差异选中提交即可。</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>git submodule update --recursive --remote
+</code></pre></td></tr></table>
+</div>
+</div><p>更新之后主库的 git 差异中会显示新的 SHA 码，把这个差异选中提交即可。</p>
 <hr>
 <ul>
 <li>其他命令：在主仓库更新所有子模块：<code>git submodule foreach git pull origin master</code></li>
@@ -252,7 +505,7 @@ ssh-keygen -t rsa -C <span class=s2>&#34;455343442@qq.com&#34;</span>
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>

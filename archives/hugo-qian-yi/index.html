@@ -38,7 +38,7 @@ extended">
 </div>
 <div><svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-pencil" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentcolor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M4 20h4L18.5 9.5a1.5 1.5.0 00-4-4L4 16v4"/><line x1="13.5" y1="6.5" x2="17.5" y2="10.5"/></svg>
 <time class=article-words>
-621 字
+627 字
 </time>
 </div>
 </footer>
@@ -59,15 +59,39 @@ extended">
 <h3 id=服务器上的操作>服务器上的操作</h3>
 <p>如果是部署到服务器，先将服务器原来的SSH 公钥先删除，再上传新的SSH 公钥。具体操作如下:</p>
 <p>服务器上输入：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>su git
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span><span class=lnt>3
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-bash data-lang=bash>su git
 <span class=nb>cd</span> ~/.ssh
 rm -rf authorized_keys
-</code></pre></div><p>本地Git Bash里输入：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>ssh</span><span class=o>-</span><span class=nx>copy</span><span class=o>-</span><span class=nx>id</span> <span class=o>-</span><span class=nx>i</span> <span class=o>~</span><span class=err>/.ssh/id_rsa.pub git@服务器ip地址</span>
-</code></pre></div><p>如果在git bash中输入ssh git@服务器的IP地址,能够远程登录的话，则表示设置成功了。如若还是要输入密码，就修改目录权限：</p>
-<div class=highlight><pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>chmod</span> <span class=mi>600</span> <span class=o>~</span><span class=err>/.ssh/authorized_keys</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>本地Git Bash里输入：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>ssh</span><span class=o>-</span><span class=nx>copy</span><span class=o>-</span><span class=nx>id</span> <span class=o>-</span><span class=nx>i</span> <span class=o>~</span><span class=err>/.ssh/id_rsa.pub git@服务器ip地址</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>如果在git bash中输入ssh git@服务器的IP地址,能够远程登录的话，则表示设置成功了。如若还是要输入密码，就修改目录权限：</p>
+<div class=highlight><div class=chroma>
+<table class=lntable><tr><td class=lntd>
+<pre tabindex=0 class=chroma><code><span class=lnt>1
+</span><span class=lnt>2
+</span></code></pre></td>
+<td class=lntd>
+<pre tabindex=0 class=chroma><code class=language-javascript data-lang=javascript><span class=nx>chmod</span> <span class=mi>600</span> <span class=o>~</span><span class=err>/.ssh/authorized_keys</span>
 <span class=nx>chmod</span> <span class=mi>700</span> <span class=o>~</span><span class=err>/.ssh</span>
-</code></pre></div><h3 id=githubgitee上的操作>github&gitee上的操作</h3>
+</code></pre></td></tr></table>
+</div>
+</div><h3 id=githubgitee上的操作>github&gitee上的操作</h3>
 <p>如果是备份源码到githuhb上，部署网页到gitee上，要将重新生成的SSH公钥添加到github&gitee上。两者都在右上角<code>个人设置里添加</code>。</p>
 <h3 id=本地最后调试>本地最后调试</h3>
 <p>重装系统后，Algolia的自动提交索引功能要重新部署一遍，具体可查看：<a class=link href=https://bore.vip/hugo-theme-loveit-algolia/ target=_blank rel=noopener>Hugo添加Algolia</a>。最后还要在博客目录里重新关联远程仓库，还是一样先备份源码到github，再部署网页到相应服务器。</p>
@@ -95,7 +119,7 @@ rm -rf authorized_keys
 </section>
 <section class=powerby>
 Built with <a href=https://gohugo.io/ target=_blank rel=noopener>Hugo</a> <br>
-Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.7.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
+Theme <b><a href=https://github.com/CaiJimmy/hugo-theme-stack target=_blank rel=noopener data-version=3.8.0>Stack</a></b> designed by <a href=https://jimmycai.com target=_blank rel=noopener>Jimmy</a>
 </section>
 </footer>
 <div class=pswp tabindex=-1 role=dialog aria-hidden=true>
